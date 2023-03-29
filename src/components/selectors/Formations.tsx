@@ -33,10 +33,12 @@ function Formations({ setFormation }: Props) {
     }
   };
   return (
-    <div id="formations">
+    <div id="formations" className="form-control ">
+      <label className="label">
+        <span className="label-text">Formação</span>
+      </label>
       <select
-        name="formation"
-        id="formation"
+        className="select select-bordered max-w-[7rem]"
         onChange={(e) => handleFormation(e.currentTarget.value)}
       >
         <option value="4-2-2A">4-4-2A</option>
