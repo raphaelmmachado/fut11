@@ -27,14 +27,13 @@ export default function Player({
         setPlayers(newArray);
       }}
       key={player.name}
-      className="flex justify-evenly items-center rounded-md bg-slate-800"
+      className="flex justify-around items-center max-w-md rounded-md
+       bg-slate-800"
     >
-      <div className="h-16 w-16">
-        <img src={player.img} alt={player.name} className="w-auto h-auto" />
-      </div>
-      <h4>{player.num}</h4>
-      <h3>{player.name}</h3>
-      <h4>{player.pos}</h4>
+      <img src={player.img} alt={player.name} className="object-contain" />
+      <h4 className="flex-shrink">{player.num}</h4>
+      <h3 className="">{player.name}</h3>
+      <h4 className="flex-shrink">{player.pos}</h4>
     </div>
   );
 }

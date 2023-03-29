@@ -4,13 +4,13 @@ interface Props {
 }
 export default function FilterPosition({ setFilterPosition }: Props) {
   return (
-    <section id="position_filter" className="m-1">
+    <section id="position_filter" className="max-w-xs">
       <label className="label" htmlFor="position_filter">
         <span className="label-text">Filtrar por posição</span>
       </label>
       <select
         name="position_filter"
-        className="select  w-full max-w-xs"
+        className="select select-xs sm:select-sm md:select-md"
         onChange={(e: ChangeEvent<HTMLSelectElement>) =>
           setFilterPosition(e.currentTarget.value)
         }

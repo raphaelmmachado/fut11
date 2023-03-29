@@ -94,10 +94,15 @@ export function PlayerSelect({
     <>
       {/* players */}
       <div
-        className="min-w-full max-h-[442px] overflow-auto my-3 grid grid-flow-row gap-3"
+        className="min-w-full max-h-[800px] sm:max-h-full overflow-auto my-3
+         grid grid-flow-row gap-3 bg-slate-900"
         id="select-players"
       >
-        <div className="grid grid-cols-3 gap-3 justify-between cursor-pointer relative">
+        <div
+          className="grid grid-cols-1 min-[970px]:grid-cols-2
+        place-content-center
+         min-[1250px]:grid-cols-3 gap-3 cursor-pointer relative"
+        >
           {playersToShow.map((player) => {
             return (
               <Player

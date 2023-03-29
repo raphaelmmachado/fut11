@@ -15,7 +15,7 @@ function Clubs({ setClub, club }: Props) {
         </span>
       </label>
       <select
-        className="select select-bordered max-w-[9rem]"
+        className="select select-bordered select-xs sm:select-sm md:select-md"
         name="clubs"
         id="clubs"
         onChange={(e) => setClub(e.currentTarget.value)}

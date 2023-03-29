@@ -54,7 +54,7 @@ export default function Block({
        rounded-md ${
          player.img ? "bg-transparent shadow-none" : "bg-white shadow-lg"
        }
-      ${isActive ? "ring ring-blue-600 z-40" : "ring-0 z-20"}`}
+      ${isActive ? "ring ring-blue-600 z-20" : "ring-0 z-10"}`}
       style={pos}
       onClick={() => {
         checkIndex(index);
@@ -76,7 +76,7 @@ export default function Block({
         >
           <img src={player.img} alt={player.name} />
           <h3
-            className=" text-slate-700 font-medium
+            className=" text-slate-700 font-medium text-center  
           bg-opacity-5"
           >
             {player.short_name}

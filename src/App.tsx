@@ -1,3 +1,4 @@
+import "./index.css";
 import { useState } from "react";
 //components
 import { Field } from "./components/field/Field";
@@ -9,7 +10,8 @@ import { PlayerSelect } from "./components/selectors/PlayerSelect";
 //utils
 import { fourFourTwo } from "./constants/positions";
 import { clubs } from "./constants/clubs";
-
+//icons
+import { AiFillCloseCircle } from "react-icons/ai";
 //types
 import { IPlayer, IPlayerSelect, Position } from "./types/typing";
 import FilterPosition from "./components/selectors/FilterPosition";
@@ -38,27 +40,55 @@ function App() {
   return (
     <main
       id="app"
-      className="min-h-screen flex gap-10 w-full p-6 bg-slate-900 "
+      className="min-h-screen flex flex-col md:flex-row gap-10
+       justify-center w-screen sm:w-full p-2 bg-slate-900 relative sm:p-6"
     >
-      <section
-        id="grass"
-        className="bg-green-500 w-[380px] h-[550px] p-3
-         rounded-md relative flex-shrink-0"
-      >
-        <Blocks
-          pos={formation}
-          players={players}
-          letUserSelect={letUserSelect}
-          setLetUserSelect={setLetUserSelect}
-          setPlayers={setPlayers}
-        />
-        <Field />
-      </section>
-
-      <section className="flex-grow">
-        <div className="flex items-center justify-between" id="controls">
+      <div className="flex flex-col gap-2">
+        <section className="flex items-center justify-around flex-wrap bg-slate-900">
           <Clubs club={club} setClub={setClub} />
           <Formations setFormation={setFormation} />
+        </section>
+        <section
+          id="grass"
+          className="bg-green-500 w-[380px] h-[550px] p-3
+         rounded-md relative flex-shrink-0 self-center"
+        >
+          {" "}
+          <Blocks
+            pos={formation}
+            players={players}
+            letUserSelect={letUserSelect}
+            setLetUserSelect={setLetUserSelect}
+            setPlayers={setPlayers}
+          />
+          <Field />
+        </section>
+      </div>
+
+      <section
+        className={`w-full sm:flex-grow absolute sm:static bg-slate-900 ${
+          letUserSelect.letSelect ? "z-30 visible" : "z-0 invisible sm:visible"
+        }`}
+        id="controls"
+      >
+        {" "}
+        <div className="w-full flex items-center justify-end  sm:hidden">
+          <button
+            className="justify-end"
+            onClick={() =>
+              setLetUserSelect({ letSelect: false, index: undefined })
+            }
+          >
+            <AiFillCloseCircle
+              className="text-slate-600 hover:text-slate-100"
+              size={30}
+            />
+          </button>
+        </div>
+        <div
+          className="flex items-center justify-around 
+        flex-wrap bg-slate-900"
+        >
           <SearchPlayer setSearch={setSearch} />
           <FilterPosition setFilterPosition={setFilterPosition} />
         </div>

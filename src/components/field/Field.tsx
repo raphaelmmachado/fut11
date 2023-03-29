@@ -4,7 +4,7 @@ function Field() {
       {" "}
       <div
         id="frame"
-        className="relative w-full h-full z-10 border-4
+        className="relative w-full h-full border-4
          border-white"
       >
         <>
