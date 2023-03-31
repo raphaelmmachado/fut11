@@ -7,15 +7,15 @@ interface Props {
 function Clubs({ setClub, club }: Props) {
   return (
     <div className="form-control max-w-xs">
-      <label className="label">
-        <span className="label-text">Time</span>{" "}
+      <label className="text-xs flex justify-start p-1 gap-3">
+        Time
         <span>
-          {club === "flamengo" && <img src={flamengo} alt={club} width="20" />}
-          {club === "selecao" && <img src={brazil} alt={club} width="20" />}
+          {club === "flamengo" && <img src={flamengo} alt={club} width="18" />}
+          {club === "selecao" && <img src={brazil} alt={club} width="18" />}
         </span>
       </label>
       <select
-        className="select select-bordered select-xs sm:select-sm md:select-md"
+        className="select select-bordered select-sm "
         name="clubs"
         id="clubs"
         onChange={(e) => setClub(e.currentTarget.value)}

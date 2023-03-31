@@ -29,23 +29,8 @@ export default function Block({
     pos: undefined,
     num: undefined,
   };
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      const allBlocks = document.querySelectorAll("[data-block]");
-      if (
-        allBlocks &&
-        !Array.from(allBlocks).some((block) => block.contains(e.target as Node))
-      ) {
-        checkIndex(-1);
-        setLetUserSelect({
-          index: undefined,
-          letSelect: false,
-        });
-      }
-    };
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, []);
+  // console.log(index);
+
   return (
     <div
       data-block
@@ -84,7 +69,8 @@ export default function Block({
         </div>
       ) : (
         <div className="flex items-center justify-center h-full w-full">
-          <IoPersonAddSharp className="text-blue-600" size={20} />
+          <span className="font-bold text-lg text-blue-500">{index + 1}</span>
+          {/* <IoPersonAddSharp className="text-blue-600" size={20} /> */}
         </div>
       )}
     </div>

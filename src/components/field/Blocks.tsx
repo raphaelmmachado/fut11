@@ -8,8 +8,7 @@ interface Props {
   players: IPlayer[];
   setPlayers: React.Dispatch<React.SetStateAction<IPlayer[]>>;
 }
-//TODO por questoes de teste, nao use pos vindo de um state
-// , use variavel fonte do objeto das formacoes
+
 export default function Blocks({
   pos,
   players,

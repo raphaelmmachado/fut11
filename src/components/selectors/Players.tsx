@@ -4,12 +4,14 @@ interface Props {
   players: IPlayer[];
   player: IPlayer;
   letUserSelect: IPlayerSelect;
+  setLetUserSelect: React.Dispatch<React.SetStateAction<IPlayerSelect>>;
   setPlayers: (value: React.SetStateAction<IPlayer[]>) => void;
 }
 export default function Player({
   players,
   player,
   letUserSelect,
+  setLetUserSelect,
   setPlayers,
 }: Props) {
   return (
@@ -22,18 +24,34 @@ export default function Player({
         const newArray = [...players];
         if (newArray.some((item) => item.name === player.name)) return;
         const { index } = letUserSelect;
-        if (typeof index === "undefined") return;
+        if (typeof index === "undefined" || !letUserSelect.letSelect) return;
         newArray[index] = player;
         setPlayers(newArray);
+        setLetUserSelect({ letSelect: false, index: undefined });
       }}
       key={player.name}
-      className="flex justify-around items-center max-w-md rounded-md
-       bg-slate-800"
+      className="flex justify-between gap-3 items-center rounded-md
+       bg-slate-800 flex-shrink p-2"
     >
-      <img src={player.img} alt={player.name} className="object-contain" />
-      <h4 className="flex-shrink">{player.num}</h4>
-      <h3 className="">{player.name}</h3>
-      <h4 className="flex-shrink">{player.pos}</h4>
+      <img
+        src={player.img}
+        alt={player.name}
+        className="shrink-0 object-contain"
+      />
+      <div className="flex flex-col flex-1">
+        {" "}
+        <span className="flex justify-between text-sm">
+          <h4 className="flex-shrink">
+            <span className="text-xs text-slate-500">Pos: </span>
+            {player.pos}
+          </h4>
+          <h4 className="flex-shrink">
+            <span className="text-xs text-slate-500">Núm: </span>
+            {player.num}
+          </h4>
+        </span>
+        <h3 className="font-bold text-lg">{player.name}</h3>
+      </div>
     </div>
   );
 }
