@@ -57,13 +57,12 @@ export function PlayerSelect({
     <>
       {/* recommended */}
       <div
-        className="overflow-auto mt-32 sm:mt-0 sm:my-3
-         flex flex-col gap-3 bg-slate-900 "
+        className="overflow-auto flex flex-col gap-3 bg-slate-900 py-2 border-b border-b-slate-800 w-full"
         id="select-players"
       >
         {" "}
         <span className="flex justify-between items-center max-w-[10rem]">
-          <h2 className="text-sm ml-2 text-slate-500">Recomendados</h2>
+          <h2 className="text-sm  text-slate-500">Recomendados</h2>
           {showGrid.recommended ? (
             <button
               onClick={() =>
@@ -95,9 +94,8 @@ export function PlayerSelect({
         {showGrid.recommended && (
           <div
             ref={animationParent}
-            className="grid grid-cols-2 sm:grid-cols-3
-        place-content-center
-         min-[1250px]:grid-cols-4 gap-1 pb-6 ml-1 mr-5"
+            className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2
+         xl:grid-cols-3 gap-1 place-content-center"
           >
             {recommended &&
               recommended.map((player) => {
@@ -120,13 +118,12 @@ export function PlayerSelect({
       {/* players */}
 
       <div
-        className="overflow-auto sm:mt-0 sm:my-3
-         flex flex-col gap-3 bg-slate-900 "
+        className=" flex flex-col gap-3 bg-slate-900 py-2 border-b border-b-slate-800 w-full"
         id="select-players"
       >
         <span className="flex justify-between items-center max-w-[10rem]">
           {" "}
-          <h2 className="text-sm ml-2 text-slate-500">
+          <h2 className="text-sm text-slate-500">
             {" "}
             {formatPositions(filterPosition)}
           </h2>
@@ -158,29 +155,29 @@ export function PlayerSelect({
             </button>
           )}
         </span>
-
-        {showGrid.rest && (
-          <div
-            ref={animationParent}
-            className="grid grid-cols-2
-        place-content-center
-         min-[1250px]:grid-cols-3 gap-3 p-2"
-          >
-            {playersToShow.map((player) => {
-              if (!squares.some((square) => player === square))
-                return (
-                  <Player
-                    key={player.name}
-                    players={squares}
-                    player={player}
-                    letUserSelect={letUserSelect}
-                    setLetUserSelect={setLetUserSelect}
-                    setPlayers={setSquares}
-                  />
-                );
-            })}
-          </div>
-        )}
+        <div className=" max-h-64 lg:max-h-max overflow-auto">
+          {showGrid.rest && (
+            <div
+              ref={animationParent}
+              className="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2
+              xl:grid-cols-3 gap-1 place-content-center"
+            >
+              {playersToShow.map((player) => {
+                if (!squares.some((square) => player === square))
+                  return (
+                    <Player
+                      key={player.name}
+                      players={squares}
+                      player={player}
+                      letUserSelect={letUserSelect}
+                      setLetUserSelect={setLetUserSelect}
+                      setPlayers={setSquares}
+                    />
+                  );
+              })}
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

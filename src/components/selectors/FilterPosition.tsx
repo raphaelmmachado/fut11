@@ -6,11 +6,11 @@ export default function FilterPosition({ setFilterPosition }: Props) {
   return (
     <section id="position_filter" className="max-w-xs">
       <label className="label" htmlFor="position_filter">
-        <span className="text-xs">Filtrar por posição</span>
+        <span className="text-sm">Filtrar por posição</span>
       </label>
       <select
         name="position_filter"
-        className="select select-sm max-w-[8rem]"
+        className="select select-md bg-slate-800"
         onChange={(e: ChangeEvent<HTMLSelectElement>) =>
           setFilterPosition(e.currentTarget.value)
         }

@@ -74,20 +74,20 @@ const threeFiveTwo: Position = [
   //gol
   { top: "2%", left: "50%", transform: "translateX(-50%)" },
   //ala direito
-  { top: "35%", left: "10%", transform: "translateX(-50%)" },
+  { top: "40%", left: "15%", transform: "translateX(-50%)" },
   //z dir
-  { top: "15%", left: "15%", transform: "translateX(-50%)" },
+  { top: "20%", left: "25%", transform: "translateX(-50%)" },
   // z esq
-  { top: "15%", left: "85%", transform: "translateX(-50%)" },
+  { top: "20%", left: "75%", transform: "translateX(-50%)" },
   //z central
-  { top: "15%", left: "50%", transform: "translateX(-50%)" },
+  { top: "20%", left: "50%", transform: "translateX(-50%)" },
   //ala esquerda
-  { top: "35%", left: "90%", transform: "translateX(-50%)" },
+  { top: "40%", left: "85%", transform: "translateX(-50%)" },
 
   // meias ofe
   { top: "55%", left: "70%", transform: "translateX(-50%)" },
   // meia def
-  { top: "35%", left: "50%", transform: "translateX(-50%)" },
+  { top: "40%", left: "50%", transform: "translateX(-50%)" },
 
   // atk
   { top: "75%", left: "25%", transform: "translateX(-50%)" },

@@ -35,7 +35,9 @@ export default function Player({
         }
       }}
       key={player.name}
-      className={`flex justify-between gap-3 items-center rounded-md bg-slate-800 flex-shrink p-2 cursor-pointer shadow-lg hover:bg-slate-600 transition-colors`}
+      className={`flex justify-between gap-3 items-center rounded-md
+       bg-slate-800 flex-shrink p-2 cursor-pointer shadow-lg
+        hover:bg-slate-600 transition-colors`}
     >
       <img
         src={player.img}

@@ -28,7 +28,7 @@ export default function Squares({
             index={i}
             letUserSelect={letUserSelect}
             setLetUserSelect={setLetUserSelect}
-            isActive={i === isActiveIndex}
+            isActive={i === isActiveIndex && letUserSelect.letSelect === true}
             checkIndex={(index: number) =>
               index === i ? setIsActiveIndex(index) : setIsActiveIndex(null)
             }

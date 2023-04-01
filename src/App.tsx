@@ -44,14 +44,10 @@ function App() {
   return (
     <main
       id="app"
-      className="min-h-screen flex flex-col lg:flex-row gap-10
-        w-screen sm:w-full bg-slate-900 relative sm:p-4"
+      className="min-h-screen flex flex-col sm:flex-row gap-6
+        w-screen sm:w-full bg-slate-900 relative p-6"
     >
-      <div className="flex flex-col gap-2">
-        <section className="flex items-center justify-around flex-wrap bg-slate-900">
-          <Clubs club={club} setClub={setClub} />
-          <Formations setFormation={setFormation} />
-        </section>
+      <div className="flex flex-col items-center gap-2">
         <section
           ref={fieldRef}
           id="grass"
@@ -70,57 +66,40 @@ function App() {
         </section>
 
         <button
-          onClick={() => takeScreenshot(fieldRef)}
-          className="bg-blue-600 font-bold  active:bg-blue-900 shadow-md w-full rounded-lg py-2 px-4"
+          onClick={async () => {
+            await setLetUserSelect({ index: undefined, letSelect: false });
+            await takeScreenshot(fieldRef);
+          }}
+          className="bg-blue-600 font-bold max-w-fit
+           active:bg-blue-900 shadow-md w-full rounded-lg py-2 px-4"
         >
           Salvar
         </button>
       </div>
-
-      <section
-        className={`w-full flex flex-col gap-10 justify-start sm:flex-grow absolute inset-0 sm:static bg-slate-900 ${
-          letUserSelect.letSelect ? "z-30 visible" : "z-0 invisible sm:visible"
-        }`}
-        id="controls"
-      >
-        {" "}
-        <div className="flex flex-col fixed w-full sm:static">
-          <div
-            className="w-full bg-slate-900
-           flex items-center justify-end sm:hidden"
-          >
-            <button
-              className="justify-end"
-              onClick={() =>
-                setLetUserSelect({ letSelect: false, index: undefined })
-              }
-            >
-              <AiOutlineClose
-                className="text-slate-600 hover:text-slate-100"
-                size={30}
-              />
-            </button>
-          </div>
-          <div
-            className="flex items-center justify-around 
-        flex-wrap bg-slate-900  shadow-sm"
-          >
-            <SearchPlayer setSearch={setSearch} />
-            <FilterPosition setFilterPosition={setFilterPosition} />
-          </div>
-        </div>
-        <PlayerSelect
-          clubs={clubs}
-          club={club}
-          letUserSelect={letUserSelect}
-          squares={squares}
-          setSquares={setSquares}
-          search={search}
-          filterPosition={filterPosition}
-          setFilterPosition={setFilterPosition}
-          setLetUserSelect={setLetUserSelect}
-        />
-      </section>
+      <div className="flex flex-col lg:flex-row gap-6 sm:flex-grow">
+        <section
+          className={`w-full flex flex-col gap-4 justify-start  bg-slate-900`}
+          id="select"
+        >
+          <PlayerSelect
+            clubs={clubs}
+            club={club}
+            letUserSelect={letUserSelect}
+            squares={squares}
+            setSquares={setSquares}
+            search={search}
+            filterPosition={filterPosition}
+            setFilterPosition={setFilterPosition}
+            setLetUserSelect={setLetUserSelect}
+          />
+        </section>
+        <aside className="flex flex-col gap-5">
+          <Clubs club={club} setClub={setClub} />
+          <Formations setFormation={setFormation} />
+          <SearchPlayer setSearch={setSearch} />
+          <FilterPosition setFilterPosition={setFilterPosition} />
+        </aside>
+      </div>
     </main>
   );
 }

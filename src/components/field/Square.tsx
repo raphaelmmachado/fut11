@@ -33,12 +33,13 @@ export default function Square({
   return (
     <div
       data-block
-      className={`absolute  flex items-center
-       justify-center cursor-pointer text-center
-       rounded-md ${
-         player.img ? "bg-transparent shadow-none" : "bg-white shadow-lg"
-       }
-      ${isActive ? "ring ring-blue-600 z-20" : "ring-0 z-10"}`}
+      className={`absolute cursor-pointer text-center rounded-md z-10 bg-transparent shadow-none
+      ${
+        isActive
+          ? "border-2 border-blue-600"
+          : "border-0 border-transparent text-red"
+      }
+      `}
       style={pos}
       onClick={() => {
         checkIndex(index);
@@ -56,19 +57,16 @@ export default function Square({
       {player.img && player.name && player.num ? (
         <div
           className="flex flex-col items-center 
-        justify-center relative "
+        justify-center relative min-w-max"
         >
           <img src={player.img} alt={player.name} />
-          <h3
-            className=" text-slate-700 font-medium text-center  
-          bg-opacity-5"
-          >
+          <h3 className=" text-slate-700 font-bold text-center bg-green-200 shadow-md rounded-md px-1">
             {player.short_name}
           </h3>
         </div>
       ) : (
-        <div className="flex items-center justify-center min-h-[4rem] min-w-[3.5rem]">
-          <span className="font-bold text-lg text-blue-500">{index + 1}</span>
+        <div className="flex items-center justify-center min-h-[4rem] min-w-[3.5rem] bg-white shadow-lg rounded-md">
+          <span className="font-bold text-lg text-blue-600">{index + 1}</span>
         </div>
       )}
     </div>
