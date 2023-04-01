@@ -60,7 +60,7 @@ const clubs: Club = {
     {
       name: "Santos",
       short_name: "Santos",
-      num: 20,
+      num: 1,
       img: santos,
       pos: "G",
     },

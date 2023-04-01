@@ -1,41 +1,40 @@
 import { IPlayer, IPlayerSelect } from "../../types/typing";
-import { IoPersonAddSharp } from "react-icons/io5";
-import { useEffect } from "react";
+
 interface Props {
   pos: pos;
   index: number;
   letUserSelect: IPlayerSelect;
   setLetUserSelect: React.Dispatch<React.SetStateAction<IPlayerSelect>>;
-  players: IPlayer[];
-  setPlayers: React.Dispatch<React.SetStateAction<IPlayer[]>>;
+  squares: IPlayer[];
+  setSquares: React.Dispatch<React.SetStateAction<IPlayer[]>>;
   checkIndex: (index: number) => void;
   isActive: boolean;
 }
 type pos = { top: string; left: string } | { bottom: string; right: string };
 
-export default function Block({
+export default function Square({
   pos,
   index,
   setLetUserSelect,
-  players,
-  setPlayers,
+  squares,
+  setSquares,
   checkIndex,
   isActive,
 }: Props) {
-  const player = players[index];
+  const player = squares[index];
+
   const resetedPlayer = {
     name: undefined,
     img: undefined,
     pos: undefined,
     num: undefined,
   };
-  // console.log(index);
-
+  //TODO borda azul sumir após selecionar jogador
   return (
     <div
       data-block
-      className={`absolute min-h-[4rem] min-w-[3.5rem] flex items-center
-       justify-center cursor-pointer
+      className={`absolute  flex items-center
+       justify-center cursor-pointer text-center
        rounded-md ${
          player.img ? "bg-transparent shadow-none" : "bg-white shadow-lg"
        }
@@ -49,15 +48,15 @@ export default function Block({
         });
       }}
       onDoubleClick={() => {
-        const newArray = [...players];
+        const newArray = [...squares];
         newArray[index] = resetedPlayer;
-        setPlayers(newArray);
+        setSquares(newArray);
       }}
     >
       {player.img && player.name && player.num ? (
         <div
           className="flex flex-col items-center 
-        justify-center relative hover:scale-105 transition"
+        justify-center relative "
         >
           <img src={player.img} alt={player.name} />
           <h3
@@ -68,9 +67,8 @@ export default function Block({
           </h3>
         </div>
       ) : (
-        <div className="flex items-center justify-center h-full w-full">
+        <div className="flex items-center justify-center min-h-[4rem] min-w-[3.5rem]">
           <span className="font-bold text-lg text-blue-500">{index + 1}</span>
-          {/* <IoPersonAddSharp className="text-blue-600" size={20} /> */}
         </div>
       )}
     </div>

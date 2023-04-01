@@ -1,31 +1,30 @@
-import Block from "./Block";
+import Square from "./Square";
 import { useState } from "react";
 import { Position, IPlayer, IPlayerSelect } from "../../types/typing";
 interface Props {
   pos: Position;
   letUserSelect: IPlayerSelect;
   setLetUserSelect: React.Dispatch<React.SetStateAction<IPlayerSelect>>;
-  players: IPlayer[];
-  setPlayers: React.Dispatch<React.SetStateAction<IPlayer[]>>;
+  squares: IPlayer[];
+  setSquares: React.Dispatch<React.SetStateAction<IPlayer[]>>;
 }
 
-export default function Blocks({
+export default function Squares({
   pos,
-  players,
+  squares,
   letUserSelect,
   setLetUserSelect,
-  setPlayers,
+  setSquares,
 }: Props) {
   const [isActiveIndex, setIsActiveIndex] = useState<null | number>(null);
-
   return (
     <>
-      {players.map((player, i) => {
+      {squares.map((player, i) => {
         return (
-          <Block
+          <Square
             key={i}
             pos={pos[i]}
-            players={players}
+            squares={squares}
             index={i}
             letUserSelect={letUserSelect}
             setLetUserSelect={setLetUserSelect}
@@ -33,7 +32,7 @@ export default function Blocks({
             checkIndex={(index: number) =>
               index === i ? setIsActiveIndex(index) : setIsActiveIndex(null)
             }
-            setPlayers={setPlayers}
+            setSquares={setSquares}
           />
         );
       })}
