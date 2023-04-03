@@ -1,38 +1,33 @@
 import { IPlayer, IPlayerSelect } from "../../../types/typing";
-import useWindowSize from "../../../hooks/useWindowsSize";
 import { formatPosition } from "./formatPositions";
 interface Props {
   players: IPlayer[];
   player: IPlayer;
   letUserSelect: IPlayerSelect;
-  setLetUserSelect: React.Dispatch<React.SetStateAction<IPlayerSelect>>;
   setPlayers: (value: React.SetStateAction<IPlayer[]>) => void;
+  fieldRef: React.RefObject<HTMLDivElement>;
 }
 export default function Player({
   players,
   player,
   letUserSelect,
-  setLetUserSelect,
   setPlayers,
+  fieldRef,
 }: Props) {
-  const { width } = useWindowSize();
   const newArray = [...players];
 
   return (
-    <div
+    <li
       onClick={() => {
-        // copy array
-        // take the button index
-        // select a player and put in that index
-        // dont let select if player is already selected or if index is not defined
         if (newArray.some((item) => item.name === player.name)) return;
         const { index } = letUserSelect;
         if (typeof index === "undefined" || !letUserSelect.letSelect) return;
         newArray[index] = player;
         setPlayers(newArray);
-        if (width && width < 5) {
-          setLetUserSelect({ letSelect: false, index: undefined });
-        }
+        fieldRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }}
       key={player.name}
       className={`flex justify-between gap-3 items-center rounded-md
@@ -59,6 +54,6 @@ export default function Player({
           </h4>
         </span>
       </div>
-    </div>
+    </li>
   );
 }

@@ -17,6 +17,7 @@ interface IPlayer {
   img: string | undefined;
   pos: Positions | undefined;
   apelido?: string;
+  captan?: boolean;
 }
 
 type IPlayerSelect = {

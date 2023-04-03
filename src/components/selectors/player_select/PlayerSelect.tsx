@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Club, IPlayer, IPlayerSelect } from "../../../types/typing";
 import Player from "./Players";
 import { BiHide, BiShow } from "react-icons/bi";
+import { BiGridHorizontal } from "react-icons/bi";
 import filter from "./filterPlayerByName";
 import recommendPlayers from "./recommendPlayers";
 import showPlayers from "./showPlayers";
@@ -17,17 +18,20 @@ interface Props {
   search: string;
   filterPosition: string;
   setFilterPosition: React.Dispatch<React.SetStateAction<string>>;
+  gridRef: React.RefObject<HTMLDivElement>;
+  fieldRef: React.RefObject<HTMLDivElement>;
 }
 export function PlayerSelect({
   club,
   clubs,
   letUserSelect,
-  setLetUserSelect,
   squares,
   setSquares,
   search,
   filterPosition,
   setFilterPosition,
+  gridRef,
+  fieldRef,
 }: Props) {
   const defaultSet = clubs[club];
   const [playersToShow, setPlayersToShow] = useState<IPlayer[]>(defaultSet);
@@ -57,11 +61,13 @@ export function PlayerSelect({
     <>
       {/* recommended */}
       <div
+        ref={gridRef}
         className="overflow-auto flex flex-col gap-3 bg-slate-900 py-2 border-b border-b-slate-800 w-full"
         id="select-players"
       >
         {" "}
-        <span className="flex justify-between items-center max-w-[10rem]">
+        <span className="flex gap-4 items-center">
+          <BiGridHorizontal size={32} className="text-slate-700" />
           <h2 className="text-sm  text-slate-500">Recomendados</h2>
           {showGrid.recommended ? (
             <button
@@ -92,26 +98,26 @@ export function PlayerSelect({
           )}
         </span>
         {showGrid.recommended && (
-          <div
+          <ul
             ref={animationParent}
             className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2
          xl:grid-cols-3 gap-1 place-content-center"
           >
             {recommended &&
               recommended.map((player) => {
-                if (!squares.some((square) => player === square))
+                if (!squares.some((square) => player.name === square.name))
                   return (
                     <Player
                       key={player.name}
                       players={squares}
                       player={player}
                       letUserSelect={letUserSelect}
-                      setLetUserSelect={setLetUserSelect}
                       setPlayers={setSquares}
+                      fieldRef={fieldRef}
                     />
                   );
               })}
-          </div>
+          </ul>
         )}{" "}
       </div>
 
@@ -121,8 +127,8 @@ export function PlayerSelect({
         className=" flex flex-col gap-3 bg-slate-900 py-2 border-b border-b-slate-800 w-full"
         id="select-players"
       >
-        <span className="flex justify-between items-center max-w-[10rem]">
-          {" "}
+        <span className="flex gap-4 items-center">
+          <BiGridHorizontal size={32} className="text-slate-700" />
           <h2 className="text-sm text-slate-500">
             {" "}
             {formatPositions(filterPosition)}
@@ -157,7 +163,7 @@ export function PlayerSelect({
         </span>
         <div className=" max-h-64 lg:max-h-max overflow-auto">
           {showGrid.rest && (
-            <div
+            <ul
               ref={animationParent}
               className="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2
               xl:grid-cols-3 gap-1 place-content-center"
@@ -166,16 +172,16 @@ export function PlayerSelect({
                 if (!squares.some((square) => player === square))
                   return (
                     <Player
+                      fieldRef={fieldRef}
                       key={player.name}
                       players={squares}
                       player={player}
                       letUserSelect={letUserSelect}
-                      setLetUserSelect={setLetUserSelect}
                       setPlayers={setSquares}
                     />
                   );
               })}
-            </div>
+            </ul>
           )}
         </div>
       </div>

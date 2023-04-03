@@ -1,5 +1,5 @@
 import "./index.css";
-import { useState, useRef } from "react";
+import { useState, useRef, lazy, Suspense } from "react";
 //components
 import { Field } from "./components/field/Field";
 import Squares from "./components/field/Squares";
@@ -11,12 +11,14 @@ import { PlayerSelect } from "./components/selectors/player_select/PlayerSelect"
 import { fourFourTwo } from "./constants/positions";
 import { clubs } from "./constants/clubs";
 //icons
-import { AiOutlineClose } from "react-icons/ai";
 //types
 import { IPlayer, IPlayerSelect, Position } from "./types/typing";
 import FilterPosition from "./components/selectors/FilterPosition";
 import SearchPlayer from "./components/selectors/SearchPlayer";
-import takeScreenshot from "./utils/takeScreenshot";
+import Screenshot from "./components/buttons/Screenshot";
+import Download from "./components/buttons/Download";
+const TipsModal = lazy(() => import("./components/buttons/TipsModal"));
+const Share = lazy(() => import("./components/buttons/Share"));
 
 const playersInitialValue: IPlayer[] = Array(11).fill({
   name: null,
@@ -40,7 +42,7 @@ function App() {
   const [search, setSearch] = useState<string>("");
   const [filterPosition, setFilterPosition] = useState<string>("all");
   const fieldRef = useRef<HTMLDivElement>(null);
-
+  const gridRef = useRef<HTMLDivElement>(null);
   return (
     <main
       id="app"
@@ -61,21 +63,24 @@ function App() {
             letUserSelect={letUserSelect}
             setLetUserSelect={setLetUserSelect}
             setSquares={setSquares}
+            gridRef={gridRef}
           />
           <Field />
         </section>
 
-        <button
-          onClick={async () => {
-            await setLetUserSelect({ index: undefined, letSelect: false });
-            await takeScreenshot(fieldRef);
-          }}
-          className="bg-blue-600 font-bold max-w-fit
-           active:bg-blue-900 shadow-md w-full rounded-lg py-2 px-4"
-        >
-          Salvar
-        </button>
+        <div className="flex items-center gap-2">
+          <Suspense fallback={<>Carregando...</>}>
+            <TipsModal />{" "}
+            <Screenshot
+              setLetUserSelect={setLetUserSelect}
+              fieldRef={fieldRef}
+            />
+            <Download setLetUserSelect={setLetUserSelect} fieldRef={fieldRef} />
+            <Share setLetUserSelect={setLetUserSelect} fieldRef={fieldRef} />
+          </Suspense>
+        </div>
       </div>
+
       <div className="flex flex-col lg:flex-row gap-6 sm:flex-grow">
         <section
           className={`w-full flex flex-col gap-4 justify-start  bg-slate-900`}
@@ -91,6 +96,8 @@ function App() {
             filterPosition={filterPosition}
             setFilterPosition={setFilterPosition}
             setLetUserSelect={setLetUserSelect}
+            gridRef={gridRef}
+            fieldRef={fieldRef}
           />
         </section>
         <aside className="flex flex-col gap-5">
