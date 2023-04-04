@@ -7,11 +7,10 @@ const takeScreenshot = (blob: Blob | null) => {
           "image/png": blob,
         }),
       ])
-      .then(() => console.log("copiada"))
-      .catch((e) => console.log(e));
+      .then(() => console.log("copiada"));
   } else {
     console.log("Erro  ao criar objeto blob");
   }
 };
 
-export { takeScreenshot };
+export default takeScreenshot;

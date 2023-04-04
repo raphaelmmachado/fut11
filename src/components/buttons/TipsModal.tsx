@@ -12,7 +12,7 @@ export default function TipsModal() {
         <div className="modal-box">
           <h3 className="font-bold text-lg">Como usar ?</h3>
           <ol className="py-4">
-            <li>1. Escolha seu time</li>
+            <li>1. Escolha seu time (apenas Flamengo por enquanto)</li>
             <br />
             <li>
               2. Selecione uma formação (Mudar formação não desfaz sua

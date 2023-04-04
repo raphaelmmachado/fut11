@@ -15,8 +15,7 @@ import { clubs } from "./constants/clubs";
 import { IPlayer, IPlayerSelect, Position } from "./types/typing";
 import FilterPosition from "./components/selectors/FilterPosition";
 import SearchPlayer from "./components/selectors/SearchPlayer";
-import Screenshot from "./components/buttons/Screenshot";
-import Download from "./components/buttons/Download";
+
 const TipsModal = lazy(() => import("./components/buttons/TipsModal"));
 const Share = lazy(() => import("./components/buttons/Share"));
 
@@ -43,6 +42,7 @@ function App() {
   const [filterPosition, setFilterPosition] = useState<string>("all");
   const fieldRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+
   return (
     <main
       id="app"
@@ -71,12 +71,11 @@ function App() {
         <div className="flex items-center gap-2">
           <Suspense fallback={<>Carregando...</>}>
             <TipsModal />{" "}
-            <Screenshot
+            <Share
               setLetUserSelect={setLetUserSelect}
               fieldRef={fieldRef}
+              club={club}
             />
-            <Download setLetUserSelect={setLetUserSelect} fieldRef={fieldRef} />
-            <Share setLetUserSelect={setLetUserSelect} fieldRef={fieldRef} />
           </Suspense>
         </div>
       </div>

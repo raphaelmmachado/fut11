@@ -1,14 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IPlayerSelect } from "../../types/typing";
-import { takeScreenshot } from "../../utils/handleImage";
 import { IoMdShare } from "react-icons/io";
 import { toPng, toBlob } from "html-to-image";
-
+import { AiOutlineLink } from "react-icons/ai";
 import {
-  EmailShareButton,
   FacebookIcon,
   FacebookShareButton,
-  RedditShareButton,
   TelegramIcon,
   TelegramShareButton,
   TwitterIcon,
@@ -16,29 +13,41 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from "react-share";
+import Screenshot from "./Screenshot";
+import Download from "./Download";
+import Upload from "./Upload";
 
 interface Props {
   setLetUserSelect: (value: React.SetStateAction<IPlayerSelect>) => void;
   fieldRef: React.RefObject<HTMLDivElement>;
+  club: string;
 }
-export default function Share({ setLetUserSelect, fieldRef }: Props) {
-  const [image, setImage] = useState<string>();
-
-  useEffect(() => {
-    fieldRef.current &&
-      toPng(fieldRef.current).then((dataUrl) => setImage(dataUrl));
-  }, [fieldRef]);
+interface IDataURL {
+  png: string;
+  blob: Blob | null;
+}
+export default function Share({ setLetUserSelect, fieldRef, club }: Props) {
+  const [link, setLink] = useState<string>();
+  const [dataURL, setDataURL] = useState<IDataURL>();
+  const [loadingLink, setLoadingLink] = useState<boolean>(false);
 
   return (
     <>
       <label
         htmlFor="share"
-        className="btn btn-circle bg-slate-800"
-        onClick={() => {
+        className="btn bg-slate-800 gap-2"
+        onClick={async () => {
           setLetUserSelect({ index: undefined, letSelect: false });
+          if (!fieldRef.current) return;
+          const [png, blob] = await Promise.all([
+            toPng(fieldRef.current),
+            toBlob(fieldRef.current),
+          ]);
+          setDataURL({ png: png, blob: blob });
         }}
       >
         <IoMdShare size={20} />
+        <span className="font-medium">Compartilhar</span>
       </label>
       {/* Put this part before </body> tag */}
       <input type="checkbox" id="share" className="modal-toggle" />
@@ -50,42 +59,105 @@ export default function Share({ setLetUserSelect, fieldRef }: Props) {
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold">Compartilhe nas redes sociais!</h3>
-          <p className="py-4">
-            Youve been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
-          <div className="flex items-center gap-2">
-            <TwitterShareButton
-              url="https://flamaker.netlify.app/"
-              title={"Monte sua escalação do Flamengo"}
-              hashtags={["flamengo", "flamaker"]}
-            >
-              <TwitterIcon size={50} round={true} />
-            </TwitterShareButton>
-
-            <FacebookShareButton
-              url="https://flamaker.netlify.app/"
-              quote="Monte sua escalação do Flamengo!"
-            >
-              <FacebookIcon size={50} round={true} />
-            </FacebookShareButton>
-            <WhatsappShareButton
-              url="https://flamaker.netlify.app/"
-              title="Monte sua escalação do Flamengo!"
-              separator=" "
-            >
-              <WhatsappIcon size={50} round={true} />
-            </WhatsappShareButton>
-            <TelegramShareButton
-              url="https://flamaker.netlify.app/"
-              title="Monte sua escalção do Flamengo!"
-            >
-              <TelegramIcon size={50} round={true} />
-            </TelegramShareButton>
+          <h3 className="text-lg font-bold mb-2">Que timaço!</h3>
+          <div className="flex items-center justify-center m-5">
+            {" "}
+            <img
+              src={dataURL?.png}
+              alt="escalação"
+              className="object-fill w-52"
+            />
           </div>
+
+          <div className="flex items-center justify-around">
+            {" "}
+            <Screenshot blob={dataURL?.blob} />
+            <Download png={dataURL?.png} />
+            <Upload
+              png={dataURL?.png}
+              setLink={(link: string) => setLink(link)}
+              setLoadingLink={(bool: boolean) => setLoadingLink(bool)}
+            />
+          </div>
+          {link && !loadingLink ? (
+            <>
+              <ImageLink link={link} />
+              <Socials link={link} club={club} />
+            </>
+          ) : (
+            <p className="text-center m-2">Carregando link...</p>
+          )}
+          {/* {loadingLink && } */}
         </div>
       </div>
     </>
   );
 }
+interface PropsB {
+  link: string | undefined;
+}
+const ImageLink = ({ link }: PropsB) => {
+  const [copied, setCopied] = useState(false);
+
+  return (
+    <>
+      <div className="flex items-center justify-center gap-2 my-3 ">
+        <label htmlFor="link">
+          <AiOutlineLink size={24} />
+        </label>
+        <input
+          id="link"
+          className="bg-slate-700 p-2  rounded-sm w-52 cursor-pointer"
+          type="text"
+          value={link}
+          readOnly
+          onClick={(e) => {
+            navigator.clipboard.writeText(e.currentTarget.value);
+            setCopied(true);
+          }}
+        />
+        {copied && <span className="text-green-200">Copiado!</span>}
+      </div>
+    </>
+  );
+};
+interface PropsC {
+  link: string | undefined;
+  club: string;
+}
+const Socials = ({ link, club }: PropsC) => {
+  return (
+    <>
+      <div className="flex items-center justify-center gap-5">
+        <TwitterShareButton
+          url={`${link}`}
+          title={`Esta é a melhor formação para o ${club}`}
+          hashtags={[`${club}`]}
+        >
+          <TwitterIcon size={40} round={true} />
+        </TwitterShareButton>
+
+        <FacebookShareButton
+          url={`${link}`}
+          quote={`Esta é a melhor formação para o ${club}`}
+          hashtag={`${club}`}
+        >
+          <FacebookIcon size={40} round={true} />
+        </FacebookShareButton>
+        <WhatsappShareButton
+          url={`${link}`}
+          title={`Esta é a melhor formação para o ${club}`}
+          separator=" "
+        >
+          <WhatsappIcon size={40} round={true} />
+        </WhatsappShareButton>
+        <TelegramShareButton
+          url={`${link}`}
+          title={`Esta é a melhor formação para o ${club}`}
+        >
+          <TelegramIcon size={40} round={true} />
+        </TelegramShareButton>
+      </div>
+    </>
+  );
+};

@@ -26,3 +26,41 @@ type IPlayerSelect = {
 };
 
 type Positions = "G" | "D" | "LD" | "LE" | "MD" | "MA" | "A" | "P";
+
+interface CloudiRes {
+  access_mode: string;
+  asset_id: string;
+  bytes: number;
+  created_at: string;
+  etag: string;
+  existing: boolean;
+  folder: string;
+  format: string;
+  height: number;
+  placeholder: boolean;
+  public_id: string;
+  resource_type: string;
+  secure_url: string;
+  signature: string;
+  tags: [];
+  type: string;
+  url: string;
+  version: number;
+  version_id: string;
+  width: number;
+}
+export interface ShortCoRes {
+  ok: boolean;
+  result: Result;
+}
+
+export interface Result {
+  code: string;
+  short_link: string;
+  full_short_link: string;
+  short_link2: string;
+  full_short_link2: string;
+  share_link: string;
+  full_share_link: string;
+  original_link: string;
+}

@@ -40,6 +40,7 @@ export function PlayerSelect({
 
   const filteredByName = filter(clubs[club], search);
   const [animationParent] = useAutoAnimate();
+
   useEffect(() => {
     recommendPlayers(clubs[club], letUserSelect.index, setRecommended);
   }, [letUserSelect]);
