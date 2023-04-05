@@ -54,12 +54,15 @@ export default function Share({ setLetUserSelect, fieldRef, club }: Props) {
       <div className="modal">
         <div className="modal-box relative">
           <label
+            onClick={() => {
+              setLink(undefined);
+              setLoadingLink(false);
+            }}
             htmlFor="share"
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold mb-2">Que timaço!</h3>
           <div className="flex items-center justify-center m-5">
             {" "}
             <img
@@ -75,19 +78,19 @@ export default function Share({ setLetUserSelect, fieldRef, club }: Props) {
             <Download png={dataURL?.png} />
             <Upload
               png={dataURL?.png}
-              setLink={(link: string) => setLink(link)}
+              setLink={(link: string | undefined) => setLink(link)}
               setLoadingLink={(bool: boolean) => setLoadingLink(bool)}
             />
           </div>
-          {link && !loadingLink ? (
+          {link && !loadingLink && (
             <>
               <ImageLink link={link} />
               <Socials link={link} club={club} />
             </>
-          ) : (
-            <p className="text-center m-2">Carregando link...</p>
           )}
-          {/* {loadingLink && } */}
+          {loadingLink && !link && (
+            <p className="text-center">Carregando Link ...</p>
+          )}
         </div>
       </div>
     </>

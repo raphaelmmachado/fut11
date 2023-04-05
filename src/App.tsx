@@ -43,6 +43,8 @@ function App() {
   const fieldRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
+  const complete = squares.every((square) => typeof square.name === "string");
+
   return (
     <main
       id="app"
@@ -71,11 +73,13 @@ function App() {
         <div className="flex items-center gap-2">
           <Suspense fallback={<>Carregando...</>}>
             <TipsModal />{" "}
-            <Share
-              setLetUserSelect={setLetUserSelect}
-              fieldRef={fieldRef}
-              club={club}
-            />
+            {complete && (
+              <Share
+                setLetUserSelect={setLetUserSelect}
+                fieldRef={fieldRef}
+                club={club}
+              />
+            )}
           </Suspense>
         </div>
       </div>

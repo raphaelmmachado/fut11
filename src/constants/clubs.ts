@@ -24,35 +24,7 @@ import vitorhugo from "../assets/players/flamengo/victorhugo.png";
 import pulgar from "../assets/players/flamengo/pulgar.png";
 import varela from "../assets/players/flamengo/varela.png";
 import mgoncalves from "../assets/players/flamengo/mgoncalves.png";
-/*brazil*/
-import alexSandro from "../assets/players/selecao/alexsandro.jpeg";
-import alextelles from "../assets/players/selecao/alextelles.jpeg";
-import alisson from "../assets/players/selecao/alisson.jpeg";
-import arana from "../assets/players/selecao/arana.jpeg";
-import brunoguimaraes from "../assets/players/selecao/brunoguimaraes.jpeg";
-import casemiro from "../assets/players/selecao/casemiro.jpeg";
-import coutinho from "../assets/players/selecao/coutinho.jpeg";
-import cunha from "../assets/players/selecao/cunha.jpeg";
-import danielalves from "../assets/players/selecao/danielalves.jpeg";
-import danilosantos from "../assets/players/selecao/danilosantos.jpeg";
-import ederson from "../assets/players/selecao/ederson.jpeg";
-import fabinho from "../assets/players/selecao/fabinho.jpeg";
-import fred from "../assets/players/selecao/fred.jpeg";
-import gabrieljesus from "../assets/players/selecao/gabrieljesus.jpeg";
-import magalhaes from "../assets/players/selecao/magalhaes.jpeg";
-import marquinhos from "../assets/players/selecao/marquinhos.jpeg";
-import martinelli from "../assets/players/selecao/martinelli.jpeg";
-import militao from "../assets/players/selecao/militao.jpeg";
-import neymar from "../assets/players/selecao/neymar.jpeg";
-import paqueta from "../assets/players/selecao/paqueta.jpeg";
-import raphinha from "../assets/players/selecao/raphinha.jpeg";
-import richarlison from "../assets/players/selecao/richarlison.jpeg";
-import rodrygo from "../assets/players/selecao/rodrygo.jpeg";
-import thiagosilva from "../assets/players/selecao/thiagosilva.jpeg";
-import vini from "../assets/players/selecao/vini.jpeg";
-import weverton from "../assets/players/selecao/weverton.jpeg";
 import gerson from "../assets/players/flamengo/gerson.png";
-import antony from "../assets/players/selecao/antony.jpg";
 import { Club } from "../types/typing";
 
 const clubs: Club = {
@@ -268,232 +240,232 @@ const clubs: Club = {
     },
   ],
 
-  selecao: [
-    {
-      name: "Neymar Jr",
-      short_name: "Neymar",
-      apelido: "Neymar Menino Ney Júnior",
-      num: 10,
-      img: neymar,
-      pos: "A",
-    },
-    {
-      name: "Vinicius Junior",
-      short_name: "Vinicius",
-      apelido: "Vini Jr Malvadeza",
-      num: 18,
-      img: vini,
-      pos: "P",
-    },
-    {
-      name: "Antony",
-      short_name: "Antony",
-      apelido: "Antony",
-      num: 77,
-      img: antony,
-      pos: "P",
-    },
-    {
-      name: "Richarlison",
-      apelido: "Pombo",
-      short_name: "Richarlison",
-      num: 7,
-      img: richarlison,
-      pos: "A",
-    },
-    {
-      name: "L. Paquetá",
-      apelido: "Paquetá",
-      short_name: "Paquetá",
-      num: 17,
-      img: paqueta,
-      pos: "MA",
-    },
-    {
-      name: "Casemiro",
-      apelido: "Case",
-      short_name: "Casemiro",
-      num: 5,
-      img: casemiro,
-      pos: "MD",
-    },
-    {
-      name: "Fred",
-      short_name: "Fred",
-      apelido: "Fred",
-      num: 8,
-      img: fred,
-      pos: "MD",
-    },
-    {
-      name: "Raphinha",
-      apelido: "Raphinha",
-      short_name: "Raphinha",
-      num: 22,
-      img: raphinha,
-      pos: "P",
-    },
-    {
-      name: "Gerson",
-      apelido: "Coringa Vapo",
-      short_name: "Gerson",
-      num: 96,
-      img: gerson,
-      pos: "MA",
-    },
-    {
-      name: "Alex Sandro",
-      short_name: "A. Sandro",
-      num: 6,
-      img: alexSandro,
-      pos: "LE",
-    },
-    {
-      name: "Alex Telles",
-      short_name: "A. Telles",
-      num: 36,
-      img: alextelles,
-      pos: "LE",
-    },
-    {
-      name: "Alisson Becker",
-      short_name: "Alisson",
-      num: 1,
-      img: alisson,
-      pos: "G",
-    },
-    {
-      name: "G. Arana",
-      short_name: "Arana",
-      apelido: "Aranha",
-      num: 46,
-      img: arana,
-      pos: "LE",
-    },
-    {
-      name: "B. Guimarães",
-      short_name: "B. Guimarães",
+  //   selecao: [
+  //     {
+  //       name: "Neymar Jr",
+  //       short_name: "Neymar",
+  //       apelido: "Neymar Menino Ney Júnior",
+  //       num: 10,
+  //       img: neymar,
+  //       pos: "A",
+  //     },
+  //     {
+  //       name: "Vinicius Junior",
+  //       short_name: "Vinicius",
+  //       apelido: "Vini Jr Malvadeza",
+  //       num: 18,
+  //       img: vini,
+  //       pos: "P",
+  //     },
+  //     {
+  //       name: "Antony",
+  //       short_name: "Antony",
+  //       apelido: "Antony",
+  //       num: 77,
+  //       img: antony,
+  //       pos: "P",
+  //     },
+  //     {
+  //       name: "Richarlison",
+  //       apelido: "Pombo",
+  //       short_name: "Richarlison",
+  //       num: 7,
+  //       img: richarlison,
+  //       pos: "A",
+  //     },
+  //     {
+  //       name: "L. Paquetá",
+  //       apelido: "Paquetá",
+  //       short_name: "Paquetá",
+  //       num: 17,
+  //       img: paqueta,
+  //       pos: "MA",
+  //     },
+  //     {
+  //       name: "Casemiro",
+  //       apelido: "Case",
+  //       short_name: "Casemiro",
+  //       num: 5,
+  //       img: casemiro,
+  //       pos: "MD",
+  //     },
+  //     {
+  //       name: "Fred",
+  //       short_name: "Fred",
+  //       apelido: "Fred",
+  //       num: 8,
+  //       img: fred,
+  //       pos: "MD",
+  //     },
+  //     {
+  //       name: "Raphinha",
+  //       apelido: "Raphinha",
+  //       short_name: "Raphinha",
+  //       num: 22,
+  //       img: raphinha,
+  //       pos: "P",
+  //     },
+  //     {
+  //       name: "Gerson",
+  //       apelido: "Coringa Vapo",
+  //       short_name: "Gerson",
+  //       num: 96,
+  //       img: gerson,
+  //       pos: "MA",
+  //     },
+  //     {
+  //       name: "Alex Sandro",
+  //       short_name: "A. Sandro",
+  //       num: 6,
+  //       img: alexSandro,
+  //       pos: "LE",
+  //     },
+  //     {
+  //       name: "Alex Telles",
+  //       short_name: "A. Telles",
+  //       num: 36,
+  //       img: alextelles,
+  //       pos: "LE",
+  //     },
+  //     {
+  //       name: "Alisson Becker",
+  //       short_name: "Alisson",
+  //       num: 1,
+  //       img: alisson,
+  //       pos: "G",
+  //     },
+  //     {
+  //       name: "G. Arana",
+  //       short_name: "Arana",
+  //       apelido: "Aranha",
+  //       num: 46,
+  //       img: arana,
+  //       pos: "LE",
+  //     },
+  //     {
+  //       name: "B. Guimarães",
+  //       short_name: "B. Guimarães",
 
-      num: 28,
-      img: brunoguimaraes,
-      pos: "MA",
-    },
-    {
-      name: "P. Coutinho",
-      short_name: "Coutinho",
+  //       num: 28,
+  //       img: brunoguimaraes,
+  //       pos: "MA",
+  //     },
+  //     {
+  //       name: "P. Coutinho",
+  //       short_name: "Coutinho",
 
-      num: 11,
-      img: coutinho,
-      pos: "MA",
-    },
-    {
-      name: "Matheus Cunha",
-      short_name: "M. Cunha",
-      num: 79,
-      img: cunha,
-      pos: "A",
-    },
-    {
-      name: "Daniel Alves",
-      apelido: "Dani",
-      short_name: "D. Alves",
-      num: 66,
-      img: danielalves,
-      pos: "LD",
-    },
-    {
-      name: "Danilo",
-      short_name: "Danilo",
-      num: 68,
-      img: danilosantos,
-      pos: "MD",
-    },
-    {
-      name: "Ederson",
-      short_name: "Ederson",
-      num: 23,
-      img: ederson,
-      pos: "G",
-    },
-    {
-      name: "Fabinho",
-      short_name: "Fabinho",
-      num: 15,
-      img: fabinho,
-      pos: "MD",
-    },
-    {
-      name: "G. Magalhães",
-      short_name: "G. Magalhães",
-      num: 52,
-      img: magalhaes,
-      pos: "D",
-    },
-    {
-      name: "Marquinhos",
-      short_name: "Marquinhos",
-      num: 4,
-      img: marquinhos,
-      pos: "D",
-    },
-    {
-      name: "G. Martinelli",
-      short_name: "Martinelli",
-      num: 91,
-      img: martinelli,
-      pos: "A",
-    },
-    {
-      name: "Militao",
-      num: 14,
-      img: militao,
-      pos: "D",
-    },
-    {
-      name: "Rodrygo",
-      short_name: "Rodrygo",
-      apelido: "Raio",
-      num: 89,
-      img: rodrygo,
-      pos: "P",
-    },
-    {
-      name: "Pedro",
-      apelido: "Queixada",
-      short_name: "Pedro",
-      num: 93,
-      img: pedro,
-      pos: "A",
-    },
-    {
-      name: "Weverton",
-      num: 12,
-      img: weverton,
-      pos: "G",
-    },
-    {
-      name: "G. Jesus",
-      short_name: "G. Jesus",
-      num: 9,
-      img: gabrieljesus,
-      pos: "A",
-    },
-    {
-      name: "Thiago Silva",
-      short_name: "T. Silva",
-      num: 3,
-      img: thiagosilva,
-      pos: "D",
-    },
-    {
-      name: "G. Barbosa",
-      apelido: "Gabigol",
-      short_name: "G. Barbosa",
-      num: 69,
-      img: gabigol,
-      pos: "A",
-    },
-  ],
+  //       num: 11,
+  //       img: coutinho,
+  //       pos: "MA",
+  //     },
+  //     {
+  //       name: "Matheus Cunha",
+  //       short_name: "M. Cunha",
+  //       num: 79,
+  //       img: cunha,
+  //       pos: "A",
+  //     },
+  //     {
+  //       name: "Daniel Alves",
+  //       apelido: "Dani",
+  //       short_name: "D. Alves",
+  //       num: 66,
+  //       img: danielalves,
+  //       pos: "LD",
+  //     },
+  //     {
+  //       name: "Danilo",
+  //       short_name: "Danilo",
+  //       num: 68,
+  //       img: danilosantos,
+  //       pos: "MD",
+  //     },
+  //     {
+  //       name: "Ederson",
+  //       short_name: "Ederson",
+  //       num: 23,
+  //       img: ederson,
+  //       pos: "G",
+  //     },
+  //     {
+  //       name: "Fabinho",
+  //       short_name: "Fabinho",
+  //       num: 15,
+  //       img: fabinho,
+  //       pos: "MD",
+  //     },
+  //     {
+  //       name: "G. Magalhães",
+  //       short_name: "G. Magalhães",
+  //       num: 52,
+  //       img: magalhaes,
+  //       pos: "D",
+  //     },
+  //     {
+  //       name: "Marquinhos",
+  //       short_name: "Marquinhos",
+  //       num: 4,
+  //       img: marquinhos,
+  //       pos: "D",
+  //     },
+  //     {
+  //       name: "G. Martinelli",
+  //       short_name: "Martinelli",
+  //       num: 91,
+  //       img: martinelli,
+  //       pos: "A",
+  //     },
+  //     {
+  //       name: "Militao",
+  //       num: 14,
+  //       img: militao,
+  //       pos: "D",
+  //     },
+  //     {
+  //       name: "Rodrygo",
+  //       short_name: "Rodrygo",
+  //       apelido: "Raio",
+  //       num: 89,
+  //       img: rodrygo,
+  //       pos: "P",
+  //     },
+  //     {
+  //       name: "Pedro",
+  //       apelido: "Queixada",
+  //       short_name: "Pedro",
+  //       num: 93,
+  //       img: pedro,
+  //       pos: "A",
+  //     },
+  //     {
+  //       name: "Weverton",
+  //       num: 12,
+  //       img: weverton,
+  //       pos: "G",
+  //     },
+  //     {
+  //       name: "G. Jesus",
+  //       short_name: "G. Jesus",
+  //       num: 9,
+  //       img: gabrieljesus,
+  //       pos: "A",
+  //     },
+  //     {
+  //       name: "Thiago Silva",
+  //       short_name: "T. Silva",
+  //       num: 3,
+  //       img: thiagosilva,
+  //       pos: "D",
+  //     },
+  //     {
+  //       name: "G. Barbosa",
+  //       apelido: "Gabigol",
+  //       short_name: "G. Barbosa",
+  //       num: 69,
+  //       img: gabigol,
+  //       pos: "A",
+  //     },
+  //   ],
 };
 // const sortedPlayers = players.sort((a, b) => a.num - b.num);
 
