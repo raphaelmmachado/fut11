@@ -41,12 +41,12 @@ export default function Upload({ png, setLink, setLoadingLink }: Props) {
   };
   return (
     <button
-      className="flex gap-1 items-center p-3 shadow-md 
+      className="flex gap-1 items-center p-3  shadow-md 
         hover:bg-slate-800 bg-slate-700 font-bold rounded-md cursor-pointer w-fit"
       onClick={() => cloudUpload()}
     >
       <AiOutlineLink size={24} />
-      <span> Gerar Link </span>
+      <span> Link </span>
     </button>
   );
 }

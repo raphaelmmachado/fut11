@@ -71,10 +71,8 @@ export default function Square({
           <div className="flex">
             <h3
               className="text-slate-700 font-bold text-center
-           bg-green-200 rounded-md px-1 shadow-md"
+           bg-green-200 rounded-md px-1 shadow-md z-10"
             >
-              <span className="font-normal">{`${player.num} · `}</span>
-
               {player.short_name}
             </h3>{" "}
             {isActive && !player.captan && (
@@ -100,6 +98,12 @@ export default function Square({
               </span>
             )}
           </div>
+          <span
+            className="text-slate-700 font-medium text-center min-w-[2rem]
+           bg-green-200 rounded-br-md rounded-bl-md px-1 shadow-md z-0"
+          >
+            {player.num}
+          </span>
         </div>
       ) : (
         <div className="flex items-center justify-center min-h-[4rem] min-w-[3.5rem] bg-white shadow-md rounded-md">

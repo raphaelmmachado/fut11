@@ -67,36 +67,27 @@ export function PlayerSelect({
         id="select-players"
       >
         {" "}
-        <span className="flex gap-4 items-center">
+        <span
+          className="flex gap-4 items-center cursor-pointer w-fit"
+          onClick={() =>
+            setShowGrid((prev) => {
+              return {
+                ...prev,
+                recommended: !prev.recommended,
+              };
+            })
+          }
+        >
           <BiGridHorizontal size={32} className="text-slate-700" />
           <h2 className="text-sm  text-slate-500">Recomendados</h2>
-          {showGrid.recommended ? (
-            <button
-              onClick={() =>
-                setShowGrid((prev) => {
-                  return {
-                    ...prev,
-                    recommended: !prev.recommended,
-                  };
-                })
-              }
-            >
+
+          <button>
+            {showGrid.recommended ? (
               <BiShow size={20} className="text-slate-500" />
-            </button>
-          ) : (
-            <button
-              onClick={() =>
-                setShowGrid((prev) => {
-                  return {
-                    ...prev,
-                    recommended: !prev.recommended,
-                  };
-                })
-              }
-            >
+            ) : (
               <BiHide size={20} className="text-slate-500" />
-            </button>
-          )}
+            )}
+          </button>
         </span>
         {showGrid.recommended && (
           <ul
@@ -128,39 +119,30 @@ export function PlayerSelect({
         className=" flex flex-col gap-3 bg-slate-900 py-2 border-b border-b-slate-800 w-full"
         id="select-players"
       >
-        <span className="flex gap-4 items-center">
+        <span
+          className="flex gap-4 items-center cursor-pointer  w-fit"
+          onClick={() =>
+            setShowGrid((prev) => {
+              return {
+                ...prev,
+                rest: !prev.rest,
+              };
+            })
+          }
+        >
           <BiGridHorizontal size={32} className="text-slate-700" />
           <h2 className="text-sm text-slate-500">
             {" "}
             {formatPositions(filterPosition)}
           </h2>
-          {showGrid.rest ? (
-            <button
-              onClick={() =>
-                setShowGrid((prev) => {
-                  return {
-                    ...prev,
-                    rest: !prev.rest,
-                  };
-                })
-              }
-            >
+
+          <button>
+            {showGrid.rest ? (
               <BiShow size={20} className="text-slate-500" />
-            </button>
-          ) : (
-            <button
-              onClick={() =>
-                setShowGrid((prev) => {
-                  return {
-                    ...prev,
-                    rest: !prev.rest,
-                  };
-                })
-              }
-            >
+            ) : (
               <BiHide size={20} className="text-slate-500" />
-            </button>
-          )}
+            )}
+          </button>
         </span>
         <div className=" max-h-64 lg:max-h-max overflow-auto">
           {showGrid.rest && (

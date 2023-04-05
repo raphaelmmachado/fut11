@@ -94,10 +94,35 @@ const threeFiveTwo: Position = [
   { top: "55%", left: "30%", transform: "translateX(-50%)" },
   { top: "75%", left: "75%", transform: "translateX(-50%)" },
 ];
+const threeFourThree: Position = [
+  //gol
+  { top: "2%", left: "50%", transform: "translateX(-50%)" },
+  //ala direito
+  { top: "50%", left: "15%", transform: "translateX(-50%)" },
+  //z dir
+  { top: "20%", left: "25%", transform: "translateX(-50%)" },
+  // z esq
+  { top: "20%", left: "75%", transform: "translateX(-50%)" },
+  //z central
+  { top: "20%", left: "50%", transform: "translateX(-50%)" },
+  //ala esquerda
+  { top: "50%", left: "85%", transform: "translateX(-50%)" },
+
+  // meias ofe
+  { top: "40%", left: "65%", transform: "translateX(-50%)" },
+  // meia def
+  { top: "40%", left: "35%", transform: "translateX(-50%)" },
+
+  // atk
+  { top: "70%", left: "25%", transform: "translateX(-50%)" },
+  { top: "75%", left: "50%", transform: "translateX(-50%)" },
+  { top: "70%", left: "75%", transform: "translateX(-50%)" },
+];
 export {
   fourFourTwo,
   fourFourTwoLosangle,
   fourThreeThree,
   fourThreeThreeB,
   threeFiveTwo,
+  threeFourThree,
 };

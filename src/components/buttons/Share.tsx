@@ -65,14 +65,10 @@ export default function Share({ setLetUserSelect, fieldRef, club }: Props) {
           </label>
           <div className="flex items-center justify-center m-5">
             {" "}
-            <img
-              src={dataURL?.png}
-              alt="escalação"
-              className="object-fill w-52"
-            />
+            <ImagePic png={dataURL?.png} />
           </div>
 
-          <div className="flex items-center justify-around">
+          <div className="flex items-center justify-around my-3">
             {" "}
             <Screenshot blob={dataURL?.blob} />
             <Download png={dataURL?.png} />
@@ -85,9 +81,9 @@ export default function Share({ setLetUserSelect, fieldRef, club }: Props) {
           {link && !loadingLink && (
             <>
               <ImageLink link={link} />
-              <Socials link={link} club={club} />
             </>
           )}
+          <Socials link={link} club={club} />
           {loadingLink && !link && (
             <p className="text-center">Carregando Link ...</p>
           )}
@@ -133,34 +129,68 @@ const Socials = ({ link, club }: PropsC) => {
     <>
       <div className="flex items-center justify-center gap-5">
         <TwitterShareButton
-          url={`${link}`}
-          title={`Esta é a melhor formação para o ${club}`}
+          url="https://fut11.netlify.app"
+          title={
+            link
+              ? `Esta é a melhor formação para o ${club} ${link}`
+              : `Achei legal esse site para montar formação.`
+          }
           hashtags={[`${club}`]}
         >
           <TwitterIcon size={40} round={true} />
         </TwitterShareButton>
 
         <FacebookShareButton
-          url={`${link}`}
-          quote={`Esta é a melhor formação para o ${club}`}
+          url="https://fut11.netlify.app"
+          quote={
+            link
+              ? `Esta é a melhor formação para o ${club} ${link}`
+              : `Achei legal esse site para montar formação.`
+          }
           hashtag={`${club}`}
         >
           <FacebookIcon size={40} round={true} />
         </FacebookShareButton>
         <WhatsappShareButton
-          url={`${link}`}
-          title={`Esta é a melhor formação para o ${club}`}
+          url="https://fut11.netlify.app"
+          title={
+            link
+              ? `Esta é a melhor formação para o ${club} ${link}`
+              : `Achei legal esse site para montar formação.`
+          }
           separator=" "
         >
           <WhatsappIcon size={40} round={true} />
         </WhatsappShareButton>
         <TelegramShareButton
-          url={`${link}`}
-          title={`Esta é a melhor formação para o ${club}`}
+          url="https://fut11.netlify.app"
+          title={
+            link
+              ? `Esta é a melhor formação para o ${club} ${link}`
+              : `Achei legal esse site para montar formação.`
+          }
         >
           <TelegramIcon size={40} round={true} />
         </TelegramShareButton>
       </div>
+    </>
+  );
+};
+interface PropsD {
+  png: string | undefined;
+}
+const ImagePic = ({ png }: PropsD) => {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      {" "}
+      <img
+        onLoad={() => setShow(true)}
+        src={png}
+        alt="escalação"
+        className="object-fill w-52"
+        style={{ display: show ? "block" : "none" }}
+      />
     </>
   );
 };

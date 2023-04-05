@@ -25,6 +25,8 @@ import pulgar from "../assets/players/flamengo/pulgar.png";
 import varela from "../assets/players/flamengo/varela.png";
 import mgoncalves from "../assets/players/flamengo/mgoncalves.png";
 import gerson from "../assets/players/flamengo/gerson.png";
+import mateusao from "../assets/players/flamengo/mateusao.png";
+
 import { Club } from "../types/typing";
 
 const clubs: Club = {
@@ -237,6 +239,13 @@ const clubs: Club = {
       num: 33,
       img: cleiton,
       pos: "D",
+    },
+    {
+      name: "Mateus D. Lima",
+      short_name: "Mateusão",
+      num: 46,
+      img: mateusao,
+      pos: "A",
     },
   ],
 

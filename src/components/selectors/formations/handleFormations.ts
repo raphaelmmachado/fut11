@@ -5,6 +5,7 @@ import {
   fourThreeThree,
   fourThreeThreeB,
   threeFiveTwo,
+  threeFourThree,
 } from "../../../constants/positions";
 
 const handleFormation = (
@@ -26,6 +27,9 @@ const handleFormation = (
       break;
     case "3-5-2":
       setFormation(threeFiveTwo);
+      break;
+    case "3-4-3":
+      setFormation(threeFourThree);
       break;
     default:
       setFormation(fourFourTwo);

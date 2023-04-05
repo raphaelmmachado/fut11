@@ -19,7 +19,7 @@ const recommendPlayers = (
       setRecommended(goalkeepers);
       break;
     case 1:
-      setRecommended(rightSideBacks);
+      setRecommended([...rightSideBacks, ...wingers]);
       break;
     case 2:
       setRecommended(defenders);
@@ -31,7 +31,7 @@ const recommendPlayers = (
       setRecommended([...defMidfielders, ...defenders]);
       break;
     case 5:
-      setRecommended(leftSideBacks);
+      setRecommended([...leftSideBacks, ...wingers]);
       break;
     case 6:
       setRecommended([...midfielders, ...defMidfielders]);
@@ -43,7 +43,7 @@ const recommendPlayers = (
       setRecommended([...attackers, ...wingers]);
       break;
     case 9:
-      setRecommended(midfielders);
+      setRecommended([...midfielders, ...attackers]);
       break;
     case 10:
       setRecommended([...attackers, ...wingers]);

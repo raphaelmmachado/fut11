@@ -17,6 +17,7 @@ function Formations({ setFormation }: Props) {
         <option value="4-3-3A">4-3-3A</option>
         <option value="4-3-3B">4-3-3B</option>
         <option value="3-5-2">3-5-2</option>
+        <option value="3-4-3">3-4-3</option>
       </select>
     </div>
   );
