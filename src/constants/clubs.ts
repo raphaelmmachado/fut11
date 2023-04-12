@@ -1,6 +1,20 @@
-import { Club } from "../types/typing";
+import { Squad, Clubs } from "../types/typing";
 
-const clubs: Club = {
+const clubs: Clubs = {
+  flamengo:
+    "https://fla-bucket-s3-us.s3.amazonaws.com/public/images/escudos/1524865930.png",
+  fluminense:
+    "https://assets-fluminense.s3.amazonaws.com/assets/fluminense-d99518426e66fb3576697742f31b8b1d2b8b53d34f409072c52711764f1bdf32.svg",
+  palmeiras:
+    "https://s.sde.globo.com/media/organizations/2019/07/06/Palmeiras.svg",
+  corinthians:
+    "https://logodetimes.com/times/corinthians/logo-corinthians-256.png",
+  atletico_mineiro:
+    "https://atletico.com.br/wp-content/uploads/2022/01/atletico.svg",
+  brazil: "../../assets/icons/cbf_small.png",
+};
+
+const squads: Squad = {
   flamengo: [
     {
       name: "Santos",
@@ -1214,4 +1228,4 @@ const clubs: Club = {
 };
 // const sortedPlayers = players.sort((a, b) => a.num - b.num);
 
-export { clubs };
+export { squads, clubs };

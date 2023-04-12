@@ -1,6 +1,6 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useEffect, useState } from "react";
-import { Club, IPlayer, IPlayerSelect } from "../../../types/typing";
+import { IPlayer, IPlayerSelect, Squad } from "../../../types/typing";
 import Player from "./Players";
 import { BiHide, BiShow } from "react-icons/bi";
 import { BiGridHorizontal } from "react-icons/bi";
@@ -10,7 +10,7 @@ import showPlayers from "./showPlayers";
 import { formatPositions } from "./formatPositions";
 interface Props {
   club: string;
-  clubs: Club;
+  squads: Squad;
   letUserSelect: IPlayerSelect;
   setLetUserSelect: React.Dispatch<React.SetStateAction<IPlayerSelect>>;
   squares: IPlayer[];
@@ -23,7 +23,7 @@ interface Props {
 }
 export function PlayerSelect({
   club,
-  clubs,
+  squads,
   letUserSelect,
   squares,
   setSquares,
@@ -33,16 +33,16 @@ export function PlayerSelect({
   gridRef,
   fieldRef,
 }: Props) {
-  const defaultSet = clubs[club];
+  const defaultSet = squads[club];
   const [playersToShow, setPlayersToShow] = useState<IPlayer[]>(defaultSet);
   const [recommended, setRecommended] = useState<IPlayer[]>();
   const [showGrid, setShowGrid] = useState({ recommended: true, rest: false });
 
-  const filteredByName = filter(clubs[club], search);
+  const filteredByName = filter(squads[club], search);
   const [animationParent] = useAutoAnimate();
 
   useEffect(() => {
-    recommendPlayers(clubs[club], letUserSelect.index, setRecommended);
+    recommendPlayers(squads[club], letUserSelect.index, setRecommended);
   }, [letUserSelect, club]);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export function PlayerSelect({
 
   useEffect(() => {
     if (search) return;
-    showPlayers(filterPosition, clubs[club], defaultSet, setPlayersToShow);
+    showPlayers(filterPosition, squads[club], defaultSet, setPlayersToShow);
   }, [filterPosition, club]);
   return (
     <>

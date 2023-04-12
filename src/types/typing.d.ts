@@ -7,7 +7,7 @@ export type typeB = { bottom: string; right: string };
 interface Position {
   [key: number]: CSSProperties;
 }
-interface Club {
+interface Squad {
   [key: string]: IPlayer[];
 }
 interface IPlayer {
@@ -19,7 +19,7 @@ interface IPlayer {
   apelido?: string;
   captan?: boolean;
 }
-
+s;
 type IPlayerSelect = {
   letSelect: boolean;
   index: undefined | number;
@@ -73,4 +73,7 @@ export interface Result {
   share_link: string;
   full_share_link: string;
   original_link: string;
+}
+interface Clubs {
+  [key: string]: string;
 }

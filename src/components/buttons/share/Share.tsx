@@ -57,7 +57,6 @@ export default function Share({
           <label
             onClick={() => {
               setLink(undefined);
-              // setLoadingLink(false);
             }}
             htmlFor="share"
             className="btn btn-sm btn-circle absolute right-2 top-2"

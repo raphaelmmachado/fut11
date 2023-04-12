@@ -9,7 +9,7 @@ import { PlayerSelect } from "./components/selectors/player_select/PlayerSelect"
 
 //utils
 import { fourFourTwo } from "./constants/positions";
-import { clubs } from "./constants/clubs";
+import { squads } from "./constants/clubs";
 //icons
 //types
 import { IPlayer, IPlayerSelect, Position } from "./types/typing";
@@ -107,7 +107,7 @@ function App() {
           id="select"
         >
           <PlayerSelect
-            clubs={clubs}
+            squads={squads}
             club={club}
             letUserSelect={letUserSelect}
             squares={squares}
