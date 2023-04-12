@@ -13,14 +13,14 @@ const fourFourTwo: Position = [
   //le
   { top: "20%", left: "85%", transform: "translateX(-50%)" },
   //ma
-  { top: "58%", left: "25%", transform: "translateX(-50%)" },
+  { top: "55%", left: "25%", transform: "translateX(-50%)" },
   //md
   { top: "40%", left: "65%", transform: "translateX(-50%)" },
   //atk
-  { top: "77%", left: "35%", transform: "translateX(-50%)" },
+  { top: "75%", left: "35%", transform: "translateX(-50%)" },
   //ma
-  { top: "58%", left: "75%", transform: "translateX(-50%)" },
-  { top: "77%", left: "65%", transform: "translateX(-50%)" },
+  { top: "55%", left: "75%", transform: "translateX(-50%)" },
+  { top: "75%", left: "65%", transform: "translateX(-50%)" },
 ];
 const fourFourTwoLosangle: Position = [
   //gol
@@ -53,9 +53,9 @@ const fourThreeThree: Position = [
   { top: "20%", left: "85%", transform: "translateX(-50%)" },
   { top: "45%", left: "75%", transform: "translateX(-50%)" },
   { top: "45%", left: "25%", transform: "translateX(-50%)" },
-  { top: "77%", left: "25%", transform: "translateX(-50%)" },
+  { top: "75%", left: "25%", transform: "translateX(-50%)" },
   { top: "70%", left: "50%", transform: "translateX(-50%)" },
-  { top: "77%", left: "75%", transform: "translateX(-50%)" },
+  { top: "75%", left: "75%", transform: "translateX(-50%)" },
 ];
 const fourThreeThreeB: Position = [
   { top: "2%", left: "50%", transform: "translateX(-50%)" },
@@ -66,13 +66,13 @@ const fourThreeThreeB: Position = [
   { top: "20%", left: "85%", transform: "translateX(-50%)" },
   { top: "45%", left: "75%", transform: "translateX(-50%)" },
   { top: "45%", left: "25%", transform: "translateX(-50%)" },
-  { top: "80%", left: "50%", transform: "translateX(-50%)" },
+  { top: "75%", left: "50%", transform: "translateX(-50%)" },
   { top: "70%", left: "25%", transform: "translateX(-50%)" },
   { top: "70%", left: "75%", transform: "translateX(-50%)" },
 ];
 const threeFiveTwo: Position = [
   //gol
-  { top: "2%", left: "50%", transform: "translateX(-50%)" },
+  { top: "0%", left: "50%", transform: "translateX(-50%)" },
   //ala direito
   { top: "40%", left: "15%", transform: "translateX(-50%)" },
   //z dir
@@ -87,16 +87,16 @@ const threeFiveTwo: Position = [
   // meias ofe
   { top: "55%", left: "70%", transform: "translateX(-50%)" },
   // meia def
-  { top: "40%", left: "50%", transform: "translateX(-50%)" },
+  { top: "45%", left: "50%", transform: "translateX(-50%)" },
 
   // atk
-  { top: "75%", left: "25%", transform: "translateX(-50%)" },
+  { top: "75%", left: "35%", transform: "translateX(-50%)" },
   { top: "55%", left: "30%", transform: "translateX(-50%)" },
-  { top: "75%", left: "75%", transform: "translateX(-50%)" },
+  { top: "75%", left: "65%", transform: "translateX(-50%)" },
 ];
 const threeFourThree: Position = [
   //gol
-  { top: "2%", left: "50%", transform: "translateX(-50%)" },
+  { top: "0%", left: "50%", transform: "translateX(-50%)" },
   //ala direito
   { top: "50%", left: "15%", transform: "translateX(-50%)" },
   //z dir

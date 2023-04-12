@@ -6,39 +6,47 @@ const showPlayers = (
   defaultSet: IPlayer[],
   setPlayersToShow: (value: React.SetStateAction<IPlayer[]>) => void
 ) => {
-  const goalkeepers = playersArray.filter((player) => player.pos === "G");
-  const defenders = playersArray.filter((player) => player.pos === "D");
-  const leftSideBacks = playersArray.filter((players) => players.pos === "LE");
-  const rightSideBacks = playersArray.filter((players) => players.pos === "LD");
-  const defMidfielders = playersArray.filter((players) => players.pos === "MD");
-  const midfielders = playersArray.filter((players) => players.pos === "MA");
-  const wingers = playersArray.filter((players) => players.pos === "P");
-  const attackers = playersArray.filter((players) => players.pos === "A");
+  const GOALKEEPERS = playersArray.filter((player) => player.pos === "G");
+  const DEFENDERS = playersArray.filter((player) => player.pos === "D");
+  const LEFT_SB = playersArray.filter((players) => players.pos === "LE");
+  const RIGHT_SB = playersArray.filter((players) => players.pos === "LD");
+  const DEFENDING_MID = playersArray.filter((players) => players.pos === "MD");
+  const CENTER_MID = playersArray.filter((players) => players.pos === "MC");
+  const ATTACKING_MID = playersArray.filter((players) => players.pos === "MA");
+  const RIGHT_WINGERS = playersArray.filter((players) => players.pos === "PD");
+  const LEFT_WINGERS = playersArray.filter((players) => players.pos === "PE");
+  const ATTACKER = playersArray.filter((players) => players.pos === "A");
 
   switch (position) {
     case "G":
-      setPlayersToShow(goalkeepers);
+      setPlayersToShow(GOALKEEPERS);
       break;
     case "D" || "Z":
-      setPlayersToShow(defenders);
+      setPlayersToShow(DEFENDERS);
       break;
     case "LE":
-      setPlayersToShow(leftSideBacks);
+      setPlayersToShow(LEFT_SB);
       break;
     case "LD":
-      setPlayersToShow(rightSideBacks);
+      setPlayersToShow(RIGHT_SB);
       break;
     case "MD":
-      setPlayersToShow(defMidfielders);
+      setPlayersToShow(DEFENDING_MID);
+      break;
+    case "MC":
+      setPlayersToShow(CENTER_MID);
       break;
     case "MA":
-      setPlayersToShow(midfielders);
+      setPlayersToShow(ATTACKING_MID);
       break;
-    case "P":
-      setPlayersToShow(wingers);
+    case "PE":
+      setPlayersToShow(LEFT_WINGERS);
+      break;
+    case "PD":
+      setPlayersToShow(RIGHT_WINGERS);
       break;
     case "A":
-      setPlayersToShow(attackers);
+      setPlayersToShow(ATTACKER);
       break;
     default:
       setPlayersToShow(defaultSet);

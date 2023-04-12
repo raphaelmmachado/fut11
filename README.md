@@ -1,9 +1,9 @@
 # FUT11
 
-Build your Flamengo formation.
+Build your formation.
 
 1. Select a club.
-2. Select your prefered formation.
+2. Select your preferred formation.
 3. Pick your players
 
 - Clicking on Share you can:

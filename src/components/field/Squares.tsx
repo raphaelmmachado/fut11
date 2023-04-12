@@ -8,6 +8,7 @@ interface Props {
   squares: IPlayer[];
   setSquares: React.Dispatch<React.SetStateAction<IPlayer[]>>;
   gridRef: React.RefObject<HTMLDivElement>;
+  showNumbers: boolean;
 }
 
 export default function Squares({
@@ -17,6 +18,7 @@ export default function Squares({
   setLetUserSelect,
   setSquares,
   gridRef,
+  showNumbers,
 }: Props) {
   const [isActiveIndex, setIsActiveIndex] = useState<null | number>(null);
 
@@ -43,6 +45,7 @@ export default function Squares({
               index === i ? setIsActiveIndex(index) : setIsActiveIndex(null)
             }
             setSquares={setSquares}
+            showNumbers={showNumbers}
           />
         );
       })}

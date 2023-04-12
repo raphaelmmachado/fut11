@@ -9,6 +9,7 @@ interface Props {
   checkIndex: (index: number) => void;
   isActive: boolean;
   gridRef: React.RefObject<HTMLDivElement>;
+  showNumbers: boolean;
 }
 type pos = { top: string; left: string } | { bottom: string; right: string };
 const resetedPlayer = {
@@ -27,6 +28,7 @@ export default function Square({
   checkIndex,
   isActive,
   gridRef,
+  showNumbers,
 }: Props) {
   const player = squares[index];
 
@@ -73,7 +75,7 @@ export default function Square({
               className="text-slate-700 font-bold text-center
            bg-green-200 rounded-md px-1 shadow-md z-10"
             >
-              {player.short_name}
+              {player.short_name ?? player.name}
             </h3>{" "}
             {isActive && !player.captan && (
               <>
@@ -98,12 +100,14 @@ export default function Square({
               </span>
             )}
           </div>
-          <span
-            className="text-slate-700 font-medium text-center min-w-[2rem]
-           bg-green-200 rounded-br-md rounded-bl-md px-1 shadow-md z-0"
-          >
-            {player.num}
-          </span>
+          {showNumbers && (
+            <span
+              className="text-slate-700 font-medium text-center min-w-[2rem]
+           bg-green-300 rounded-br-md rounded-bl-md px-1 shadow-md z-0"
+            >
+              {player.num}
+            </span>
+          )}
         </div>
       ) : (
         <div className="flex items-center justify-center min-h-[4rem] min-w-[3.5rem] bg-white shadow-md rounded-md">

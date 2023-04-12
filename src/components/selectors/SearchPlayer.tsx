@@ -6,7 +6,7 @@ export default function SearchPlayer({ setSearch }: Props) {
   return (
     <section id="search" className="max-w-xs">
       <label htmlFor="players_search" className="label">
-        <span className="text-sm">Filtrar por nome</span>
+        <span className="text-sm text-slate-500">Filtrar por nome</span>
       </label>
       <input
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -15,8 +15,9 @@ export default function SearchPlayer({ setSearch }: Props) {
         type="text"
         name="players_search"
         id="players_search"
-        placeholder="Buscar jogador..."
-        className="input input-bordered input-md bg-slate-800"
+        placeholder="ex.: Arrascaeta"
+        className="input input-bordered input-md
+         bg-slate-800 text-slate-200"
       />
     </section>
   );

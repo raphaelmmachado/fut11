@@ -15,15 +15,19 @@ import { clubs } from "./constants/clubs";
 import { IPlayer, IPlayerSelect, Position } from "./types/typing";
 import FilterPosition from "./components/selectors/FilterPosition";
 import SearchPlayer from "./components/selectors/SearchPlayer";
+import SwitchNum from "./components/buttons/SwitchNum";
 
 const TipsModal = lazy(() => import("./components/buttons/TipsModal"));
 const Share = lazy(() => import("./components/buttons/Share"));
 
 const playersInitialValue: IPlayer[] = Array(11).fill({
   name: null,
+  short_name: null,
   num: null,
   img: null,
   pos: null,
+  apelido: null,
+  captan: null,
 });
 
 const letUserSelectInitialValue = {
@@ -40,22 +44,25 @@ function App() {
   const [squares, setSquares] = useState<IPlayer[]>(playersInitialValue);
   const [search, setSearch] = useState<string>("");
   const [filterPosition, setFilterPosition] = useState<string>("all");
+  const [showNumbers, setShowNumbers] = useState(true);
   const fieldRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const complete = squares.every((square) => typeof square.name === "string");
+  const allSqrsFilled = squares.every(
+    (square) => typeof square.name === "string"
+  );
 
   return (
     <main
       id="app"
-      className="min-h-screen flex flex-col sm:flex-row gap-6
-        w-screen sm:w-full bg-slate-900 relative p-6"
+      className="min-h-screen flex flex-col md:flex-row gap-6
+        w-screen sm:w-full bg-slate-900 relative text-slate-300  p-2 sm:p-3"
     >
       <div className="flex flex-col items-center gap-2">
         <section
           ref={fieldRef}
           id="grass"
-          className="bg-green-500 min-w-[320px] min-[375px]:min-w-[350px] min-[425px]:min-w-[400px]  h-[525px] p-3
+          className="bg-green-500 min-w-[320px] min-[375px]:min-w-[370px] min-[425px]:min-w-[400px]  h-[545px] p-3 pb-5
          rounded-md relative flex-shrink-0 self-center"
         >
           {" "}
@@ -66,25 +73,35 @@ function App() {
             setLetUserSelect={setLetUserSelect}
             setSquares={setSquares}
             gridRef={gridRef}
+            showNumbers={showNumbers}
           />
           <Field />
         </section>
 
-        <div className="flex items-center gap-2">
-          <Suspense fallback={<>Carregando...</>}>
-            <TipsModal />{" "}
-            {complete && (
-              <Share
-                setLetUserSelect={setLetUserSelect}
-                fieldRef={fieldRef}
-                club={club}
-              />
-            )}
+        <div className="flex items-center  gap-2">
+          <Clubs
+            club={club}
+            setClub={setClub}
+            resetSquares={() => {
+              setLetUserSelect({ index: undefined, letSelect: false });
+              setSquares(playersInitialValue);
+            }}
+          />
+          <SwitchNum
+            showNumbers={showNumbers}
+            setShowNumbers={setShowNumbers}
+          />
+          <Suspense fallback={<>...</>}>
+            <Share
+              ready={allSqrsFilled}
+              setLetUserSelect={setLetUserSelect}
+              fieldRef={fieldRef}
+              club={club}
+            />
           </Suspense>
         </div>
       </div>
-
-      <div className="flex flex-col lg:flex-row gap-6 sm:flex-grow">
+      <div className="flex flex-col-reverse sm:flex-col lg:flex-row gap-6 sm:flex-grow">
         <section
           className={`w-full flex flex-col gap-4 justify-start  bg-slate-900`}
           id="select"
@@ -104,10 +121,11 @@ function App() {
           />
         </section>
         <aside className="flex flex-col gap-5">
-          <Clubs club={club} setClub={setClub} />
+          {" "}
           <Formations setFormation={setFormation} />
           <SearchPlayer setSearch={setSearch} />
           <FilterPosition setFilterPosition={setFilterPosition} />
+          <TipsModal />{" "}
         </aside>
       </div>
     </main>

@@ -33,11 +33,15 @@ const formatPosition = (position: string) => {
     case "LE":
       return "Lateral Esquerdo";
     case "MD":
-      return "Volante";
+      return "Meia Defensivo";
+    case "MC":
+      return "Meia Central";
     case "MA":
       return "Meia Atacante";
-    case "P":
-      return "Ponta";
+    case "PD":
+      return "Ponta Direita";
+    case "PE":
+      return "Ponta Esquerda";
     case "A":
       return "Atacante";
     default:

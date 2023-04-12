@@ -21,34 +21,47 @@ interface Props {
   setLetUserSelect: (value: React.SetStateAction<IPlayerSelect>) => void;
   fieldRef: React.RefObject<HTMLDivElement>;
   club: string;
+  ready: boolean;
 }
 interface IDataURL {
   png: string;
   blob: Blob | null;
 }
-export default function Share({ setLetUserSelect, fieldRef, club }: Props) {
+export default function Share({
+  setLetUserSelect,
+  fieldRef,
+  club,
+  ready,
+}: Props) {
   const [link, setLink] = useState<string>();
   const [dataURL, setDataURL] = useState<IDataURL>();
   const [loadingLink, setLoadingLink] = useState<boolean>(false);
 
   return (
     <>
-      <label
-        htmlFor="share"
-        className="btn bg-slate-800 gap-2"
-        onClick={async () => {
-          setLetUserSelect({ index: undefined, letSelect: false });
-          if (!fieldRef.current) return;
-          const [png, blob] = await Promise.all([
-            toPng(fieldRef.current),
-            toBlob(fieldRef.current),
-          ]);
-          setDataURL({ png: png, blob: blob });
-        }}
-      >
-        <IoMdShare size={20} />
-        <span className="font-medium">Compartilhar</span>
-      </label>
+      {ready ? (
+        <label
+          htmlFor="share"
+          className="btn bg-slate-800 text-slate-300 gap-2"
+          onClick={async () => {
+            setLetUserSelect({ index: undefined, letSelect: false });
+            if (!fieldRef.current) return;
+            const [png, blob] = await Promise.all([
+              toPng(fieldRef.current),
+              toBlob(fieldRef.current),
+            ]);
+            setDataURL({ png: png, blob: blob });
+          }}
+        >
+          <IoMdShare size={20} className=" rounded-full" />
+          {/* <span className="font-medium  text-slate-300">compartilhar</span> */}
+        </label>
+      ) : (
+        <button disabled className="btn bg-slate-800 gap-2">
+          <IoMdShare size={20} className="text-slate-500 rounded-full" />
+          {/* <span className="font-medium  text-slate-500">compartilhar</span> */}
+        </button>
+      )}
       {/* Put this part before </body> tag */}
       <input type="checkbox" id="share" className="modal-toggle" />
       <div className="modal">

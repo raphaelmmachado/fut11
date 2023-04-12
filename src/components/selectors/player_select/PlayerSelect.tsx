@@ -43,7 +43,7 @@ export function PlayerSelect({
 
   useEffect(() => {
     recommendPlayers(clubs[club], letUserSelect.index, setRecommended);
-  }, [letUserSelect]);
+  }, [letUserSelect, club]);
 
   useEffect(() => {
     if (search) {
@@ -57,13 +57,13 @@ export function PlayerSelect({
   useEffect(() => {
     if (search) return;
     showPlayers(filterPosition, clubs[club], defaultSet, setPlayersToShow);
-  }, [filterPosition]);
+  }, [filterPosition, club]);
   return (
     <>
       {/* recommended */}
       <div
         ref={gridRef}
-        className="overflow-auto flex flex-col gap-3 bg-slate-900 py-2 border-b border-b-slate-800 w-full"
+        className="overflow-auto flex flex-col gap-3 bg-slate-900 py-2  w-full "
         id="select-players"
       >
         {" "}
@@ -92,8 +92,8 @@ export function PlayerSelect({
         {showGrid.recommended && (
           <ul
             ref={animationParent}
-            className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2
-         xl:grid-cols-3 gap-1 place-content-center"
+            className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2
+            xl:grid-cols-3 gap-1 place-content-center"
           >
             {recommended &&
               recommended.map((player) => {
@@ -112,11 +112,11 @@ export function PlayerSelect({
           </ul>
         )}{" "}
       </div>
-
-      {/* players */}
+      <div className="divider"></div>
+      {/* all */}
 
       <div
-        className=" flex flex-col gap-3 bg-slate-900 py-2 border-b border-b-slate-800 w-full"
+        className=" flex flex-col gap-3 bg-slate-900 py-2  w-full"
         id="select-players"
       >
         <span
@@ -144,11 +144,11 @@ export function PlayerSelect({
             )}
           </button>
         </span>
-        <div className=" max-h-64 lg:max-h-max overflow-auto">
+        <div className=" max-h-64 sm:max-h-max overflow-auto">
           {showGrid.rest && (
             <ul
               ref={animationParent}
-              className="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2
+              className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2
               xl:grid-cols-3 gap-1 place-content-center"
             >
               {playersToShow.map((player) => {

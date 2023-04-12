@@ -25,7 +25,17 @@ type IPlayerSelect = {
   index: undefined | number;
 };
 
-type Positions = "G" | "D" | "LD" | "LE" | "MD" | "MA" | "A" | "P";
+type Positions =
+  | "G"
+  | "D"
+  | "LD"
+  | "LE"
+  | "MD"
+  | "MC"
+  | "MA"
+  | "A"
+  | "PD"
+  | "PE";
 
 interface CloudiRes {
   access_mode: string;
