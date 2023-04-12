@@ -1,3 +1,4 @@
+import { TbShirtSport, TbShirtOff } from "react-icons/tb";
 interface Props {
   showNumbers: boolean;
   setShowNumbers: React.Dispatch<React.SetStateAction<boolean>>;
@@ -9,11 +10,9 @@ export default function SwitchNum({ showNumbers, setShowNumbers }: Props) {
     <>
       <button
         onClick={() => setShowNumbers((prev) => !prev)}
-        className={`p-3 rounded-lg transition ${
-          showNumbers ? actived : desactived
-        }`}
+        className={`p-3 rounded-lg transition ${actived}`}
       >
-        11
+        {showNumbers ? <TbShirtOff size={24} /> : <TbShirtSport size={24} />}
       </button>
     </>
   );

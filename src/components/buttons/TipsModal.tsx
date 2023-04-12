@@ -14,22 +14,13 @@ export default function TipsModal() {
       <div className="modal">
         <div className="modal-box">
           <ul className="text-sm">
-            <h3 className="font-bold text-lg text-slate-300">Como usar ?</h3>
-            <li>
-              Posicione os jogadores na formação que você acha que seu time deve
-              jogar. Você tem opções para copiar, salvar ou gerar um link para
-              compartilhar a imagem do campo.
-            </li>
-          </ul>
-          <br />
-          <ul className="text-sm">
             <h3 className="font-bold text-lg text-slate-300">Dicas</h3>
             <li className="list-disc">Clique duplo remove jogador</li>
             <li className="list-disc">
               {"Clicar em 'C' dá a faixa de capitão"}
             </li>
             <li className="list-disc">
-              {"Botão '11' Mostra / Esconde numeros dos jogadores no campo"}
+              {"Botão 'camisa' mostra / esconde números dos jogadores em campo"}
             </li>
           </ul>
           <br />

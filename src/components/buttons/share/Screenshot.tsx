@@ -1,8 +1,8 @@
 import { RiScreenshot2Fill } from "react-icons/ri";
-import takeScreenshot from "../../utils/takeScreenshot";
+import takeScreenshot from "../../../utils/takeScreenshot";
 
 import { useState } from "react";
-import Toast from "./Toast";
+import Toast from "../Toast";
 interface Props {
   blob: Blob | null | undefined;
 }

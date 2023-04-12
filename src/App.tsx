@@ -18,7 +18,7 @@ import SearchPlayer from "./components/selectors/SearchPlayer";
 import SwitchNum from "./components/buttons/SwitchNum";
 
 const TipsModal = lazy(() => import("./components/buttons/TipsModal"));
-const Share = lazy(() => import("./components/buttons/Share"));
+const Share = lazy(() => import("./components/buttons/share/Share"));
 
 const playersInitialValue: IPlayer[] = Array(11).fill({
   name: null,
@@ -58,11 +58,11 @@ function App() {
       className="min-h-screen flex flex-col md:flex-row gap-6
         w-screen sm:w-full bg-slate-900 relative text-slate-300  p-2 sm:p-3"
     >
-      <div className="flex flex-col items-center gap-2">
+      <div id="field" className="flex flex-col items-center gap-2">
         <section
           ref={fieldRef}
           id="grass"
-          className="bg-green-500 min-w-[320px] min-[375px]:min-w-[370px] min-[425px]:min-w-[400px]  h-[545px] p-3 pb-5
+          className="bg-green-500 min-w-[320px] min-[375px]:min-w-[370px] min-[425px]:min-w-[400px] h-[545px] p-3
          rounded-md relative flex-shrink-0 self-center"
         >
           {" "}
