@@ -226,6 +226,34 @@ const squads: Squad = {
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680741412/flamengo_new/mateusao_r0o6gz.png",
       pos: "A",
     },
+    {
+      name: "Wesley França",
+      short_name: "Wesley",
+      num: 43,
+      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1683045034/flamengo/wesley_is9trh.png",
+      pos: "LD",
+    },
+    {
+      name: "Igor Jesus",
+      short_name: "Igor",
+      num: 48,
+      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1683062182/flamengo/igor-jesus-1_xgkzri.png",
+      pos: "MD",
+    },
+    {
+      name: "Agustin Rossi",
+      short_name: "Rossi",
+      num: 51,
+      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1686705910/flamengo/agustin_rossi_1_nejgkz.png",
+      pos: "G",
+    },
+    {
+      name: "Luiz Araujo",
+      short_name: "L. Araújo",
+      num: 50,
+      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1686703571/flamengo/luiz_araujo_jzn8oy.png",
+      pos: "PD",
+    },
   ],
   palmeiras: [
     {

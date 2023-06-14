@@ -28,3 +28,23 @@ ul,
 li {
   text-decoration: none;
 }
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+/* Cor de fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+/* Cor da alça da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700  rounded-lg;
+}
+
+/* Cor da alça da barra de rolagem quando o mouse está passando por cima */
+::-webkit-scrollbar-thumb:active {
+  @apply bg-slate-800;
+}

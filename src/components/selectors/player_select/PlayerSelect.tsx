@@ -93,7 +93,7 @@ export function PlayerSelect({
           <ul
             ref={animationParent}
             className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2
-            xl:grid-cols-3 gap-1 place-content-center"
+            xl:grid-cols-3 gap-1 place-content-center overflow-hidden hover:overflow-auto"
           >
             {recommended &&
               recommended.map((player) => {
@@ -144,7 +144,7 @@ export function PlayerSelect({
             )}
           </button>
         </span>
-        <div className=" max-h-64 sm:max-h-max overflow-auto">
+        <div className="max-h-64 sm:max-h-80   overflow-auto">
           {showGrid.rest && (
             <ul
               ref={animationParent}
