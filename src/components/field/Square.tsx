@@ -63,7 +63,7 @@ export default function Square({
         setSquares(newArray);
       }}
     >
-      {player.img && player.name && player.num ? (
+      {player.img && player.name && typeof player.num === "number" ? (
         <div
           className="flex flex-col items-center
         justify-center relative min-w-max p-1"
@@ -110,7 +110,7 @@ export default function Square({
           )}
         </div>
       ) : (
-        <div className="flex items-center justify-center min-h-[4rem] min-w-[3.5rem] bg-white shadow-md rounded-md">
+        <div className="flex items-center justify-center shadow-md shadow-black/30 min-h-[4rem] min-w-[3.5rem] bg-white rounded-md">
           <span className="font-bold text-lg text-blue-600">{index + 1}</span>
         </div>
       )}

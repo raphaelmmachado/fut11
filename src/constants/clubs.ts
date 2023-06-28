@@ -54,7 +54,7 @@ const squads: Squad = {
     {
       name: "Léo Pereira",
       short_name: "L. Pereira",
-      apelido: "Leonardo Pereira",
+      apelido: "trepa",
       num: 4,
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823393/flamengo_new/leopereira_sjcb2e.png",
       pos: "D",
@@ -176,14 +176,6 @@ const squads: Squad = {
       pos: "G",
     },
     {
-      name: "Marinho",
-      apelido: "Mário Sérgio Santos Costa",
-      num: 31,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/marinho_jlwpeb.png",
-      pos: "PD",
-    },
-
-    {
       name: "Matheus França",
       short_name: "M. França",
       apelido: "Matheus França de Oliveira",
@@ -243,14 +235,14 @@ const squads: Squad = {
     {
       name: "Agustin Rossi",
       short_name: "Rossi",
-      num: 51,
+      num: 0,
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1686705910/flamengo/agustin_rossi_1_nejgkz.png",
       pos: "G",
     },
     {
       name: "Luiz Araujo",
       short_name: "L. Araújo",
-      num: 50,
+      num: 0,
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1686703571/flamengo/luiz_araujo_jzn8oy.png",
       pos: "PD",
     },
