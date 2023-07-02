@@ -146,7 +146,7 @@ const squads: Squad = {
     {
       name: "Cebolinha",
       short_name: "Cebolinha",
-      apelido: "Cebolinha",
+      apelido: "Éverton Cebola",
       num: 19,
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/cebolinha_pgp8xk.png",
       pos: "PE",
@@ -235,16 +235,22 @@ const squads: Squad = {
     {
       name: "Agustin Rossi",
       short_name: "Rossi",
-      num: 0,
+      num: 17,
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1686705910/flamengo/agustin_rossi_1_nejgkz.png",
       pos: "G",
     },
     {
       name: "Luiz Araujo",
       short_name: "L. Araújo",
-      num: 0,
+      num: 22,
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1686703571/flamengo/luiz_araujo_jzn8oy.png",
       pos: "PD",
+    },
+    {
+      name: "Allan",
+      pos: "MD",
+      num: 21,
+      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1688274928/flamengo/ALLAN_o6zxnk.png",
     },
   ],
   palmeiras: [
@@ -727,12 +733,7 @@ const squads: Squad = {
       num: 25,
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680900772/atletico_mineiro/Mariano_tzlczw.png",
     },
-    {
-      name: "Allan",
-      pos: "MD",
-      num: 29,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680900772/atletico_mineiro/Allan_pnetge.png",
-    },
+
     {
       name: "Otávio",
       pos: "MD",

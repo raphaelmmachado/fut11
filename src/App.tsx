@@ -44,7 +44,8 @@ function App() {
   const [squares, setSquares] = useState<IPlayer[]>(playersInitialValue);
   const [search, setSearch] = useState<string>("");
   const [filterPosition, setFilterPosition] = useState<string>("all");
-  const [showNumbers, setShowNumbers] = useState(true);
+  const [showNumbers, setShowNumbers] = useState(false);
+
   const fieldRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 

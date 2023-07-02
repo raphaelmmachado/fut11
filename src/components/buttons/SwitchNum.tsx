@@ -5,7 +5,6 @@ interface Props {
 }
 export default function SwitchNum({ showNumbers, setShowNumbers }: Props) {
   const actived = "bg-slate-800 text-slate-200 font-bold";
-  const desactived = "bg-slate-900 text-slate-500 font-normal";
   return (
     <>
       <button
