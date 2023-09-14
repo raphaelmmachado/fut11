@@ -31,7 +31,7 @@ li {
 
 /* Largura da barra de rolagem */
 ::-webkit-scrollbar {
-  @apply w-2;
+  @apply w-2 h-2;
 }
 
 /* Cor de fundo da barra de rolagem */

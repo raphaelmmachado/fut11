@@ -1,7 +1,7 @@
 const formatPositions = (position: string) => {
   switch (position) {
     case "all":
-      return "Todos";
+      return "Todos os Jogadores";
     case "G":
       return "Goleiros";
     case "D" || "Z":
@@ -19,7 +19,7 @@ const formatPositions = (position: string) => {
     case "A":
       return "Atacantes";
     default:
-      return "Todos";
+      return "Todos os Jogadores";
   }
 };
 const formatPosition = (position: string) => {

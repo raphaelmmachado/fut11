@@ -79,7 +79,7 @@ export function PlayerSelect({
           }
         >
           <BiGridHorizontal size={32} className="text-slate-700" />
-          <h2 className="text-sm  text-slate-500">Recomendados</h2>
+          <h2 className="text-sm  text-slate-500">Jogadores Recomendados</h2>
 
           <button>
             {showGrid.recommended ? (

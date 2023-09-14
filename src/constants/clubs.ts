@@ -89,14 +89,14 @@ const squads: Squad = {
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/tmaia_kvduft.png",
       pos: "MD",
     },
-    {
-      name: "A. Vidal",
-      short_name: "Vidal",
-      apelido: "Arturo Vidal",
-      num: 32,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/vidal_luvygz.png",
-      pos: "MD",
-    },
+    // {
+    //   name: "A. Vidal",
+    //   short_name: "Vidal",
+    //   apelido: "Arturo Vidal",
+    //   num: 32,
+    //   img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/vidal_luvygz.png",
+    //   pos: "MD",
+    // },
     {
       name: "Éverton Ribeiro",
       short_name: "É. Ribeiro",
@@ -105,13 +105,13 @@ const squads: Squad = {
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/evertonribeiro_nt9dab.png",
       pos: "MA",
     },
-    {
-      name: "Matheus Gonçalves",
-      short_name: "M. Gonçalves",
-      num: 40,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680741410/flamengo_new/mgoncalves_z4ektt.png",
-      pos: "MA",
-    },
+    // {
+    //   name: "Matheus Gonçalves",
+    //   short_name: "M. Gonçalves",
+    //   num: 40,
+    //   img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680741410/flamengo_new/mgoncalves_z4ektt.png",
+    //   pos: "MA",
+    // },
     {
       name: "De Arrascaeta",
       short_name: "Arrascaeta",
@@ -166,24 +166,14 @@ const squads: Squad = {
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823393/flamengo_new/pablo_qcwtdw.png",
       pos: "D",
     },
-
-    {
-      name: "Hugo Souza",
-      short_name: "Hugo",
-      apelido: "Neneca",
-      num: 45,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/hugo_cqvi7c.png",
-      pos: "G",
-    },
-    {
-      name: "Matheus França",
-      short_name: "M. França",
-      apelido: "Matheus França de Oliveira",
-      num: 42,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/mfranca_yby8sm.png",
-      pos: "MA",
-    },
-
+    // {
+    //   name: "Matheus França",
+    //   short_name: "M. França",
+    //   apelido: "Matheus França de Oliveira",
+    //   num: 42,
+    //   img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/mfranca_yby8sm.png",
+    //   pos: "MA",
+    // },
     {
       name: "Vitor Hugo",
       short_name: "V. Hugo",
@@ -211,13 +201,13 @@ const squads: Squad = {
       img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823393/flamengo_new/cleiton_eopb7g.png",
       pos: "D",
     },
-    {
-      name: "Mateus Lima",
-      short_name: "Mateusão",
-      num: 46,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680741412/flamengo_new/mateusao_r0o6gz.png",
-      pos: "A",
-    },
+    // {
+    //   name: "Mateus Lima",
+    //   short_name: "Mateusão",
+    //   num: 46,
+    //   img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680741412/flamengo_new/mateusao_r0o6gz.png",
+    //   pos: "A",
+    // },
     {
       name: "Wesley França",
       short_name: "Wesley",

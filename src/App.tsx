@@ -102,7 +102,7 @@ function App() {
           </Suspense>
         </div>
       </div>
-      <div className="flex flex-col-reverse sm:flex-col lg:flex-row gap-6 sm:flex-grow">
+      <div className="flex flex-col sm:flex-col lg:flex-row gap-6 sm:flex-grow">
         <section
           className={`w-full flex flex-col gap-4 justify-start  bg-slate-900`}
           id="select"
