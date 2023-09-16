@@ -88,6 +88,7 @@ function App() {
               setSquares(playersInitialValue);
             }}
           />
+          <Formations setFormation={setFormation} />
           <SwitchNum
             showNumbers={showNumbers}
             setShowNumbers={setShowNumbers}
@@ -123,7 +124,6 @@ function App() {
         </section>
         <aside className="flex flex-col gap-5">
           {" "}
-          <Formations setFormation={setFormation} />
           <SearchPlayer setSearch={setSearch} />
           <FilterPosition setFilterPosition={setFilterPosition} />
           <TipsModal />{" "}

@@ -25,18 +25,24 @@ export default function TipsModal() {
           </ul>
           <br />
 
-          <h3 className="font-bold text-lg text-slate-300">Contato</h3>
-          <ul className="text-sm">
+          <h3 className="font-bold text-lg text-slate-300">Autor</h3>
+          <p className="">Raphael Machado - raphael.mm.91@gmail.com</p>
+          <br />
+          <a
+            href="https://github.com/raphaelmmachado"
+            target="_blank"
+            className="text-blue-400"
+          >
+            Github
+          </a>
+          {/* <ul className="text-sm">
             {" "}
             sugestões ou feedbacks:
             <li>email: raphael.mm.91@gmail.com</li>
             <li>twitter: @RaphaelmDev</li>
             <li>github: github.com/raphaelmmachado</li>
-          </ul>
-          {/* <p className=" text-slate-300">
-            sugestões ou feedbacks : email: raphael.mm.91@gmail.com twitter:
-            @RaphaelmDev
-          </p> */}
+          </ul> */}
+
           <div className="modal-action">
             <label htmlFor="info-modal" className="btn text-slate-300">
               OK!

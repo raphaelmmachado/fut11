@@ -7,7 +7,6 @@ interface Props {
 function Formations({ setFormation }: Props) {
   return (
     <div id="formations" className="form-control max-w-xs">
-      <label className="text-sm text-slate-500 p-1">Formação</label>
       <select
         className="select select-md bg-slate-800 text-slate-300"
         onChange={(e) => handleFormation(e.currentTarget.value, setFormation)}
