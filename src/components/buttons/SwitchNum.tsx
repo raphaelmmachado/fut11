@@ -6,13 +6,13 @@ interface Props {
 export default function SwitchNum({ showNumbers, setShowNumbers }: Props) {
   const actived = "bg-slate-800 text-slate-200 font-bold";
   return (
-    <>
+    <div>
       <button
         onClick={() => setShowNumbers((prev) => !prev)}
-        className={`p-3 rounded-lg transition ${actived}`}
+        className={`max-[320px]:p-1 p-3 rounded-lg transition ${actived}`}
       >
         {showNumbers ? <TbShirtOff size={24} /> : <TbShirtSport size={24} />}
       </button>
-    </>
+    </div>
   );
 }

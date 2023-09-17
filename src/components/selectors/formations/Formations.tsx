@@ -8,7 +8,7 @@ function Formations({ setFormation }: Props) {
   return (
     <div id="formations" className="form-control max-w-xs">
       <select
-        className="select select-md bg-slate-800 text-slate-300"
+        className="select select-md max-[320px]:select-sm bg-slate-800 text-slate-300"
         onChange={(e) => handleFormation(e.currentTarget.value, setFormation)}
       >
         <option value="4-2-2A">4-4-2A</option>

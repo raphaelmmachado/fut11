@@ -57,13 +57,13 @@ function App() {
     <main
       id="app"
       className="min-h-screen flex flex-col md:flex-row gap-6
-        w-screen sm:w-full bg-slate-900 relative text-slate-300  p-2 sm:p-3"
+        w-screen sm:w-full bg-slate-900 relative text-slate-300 sm:p-3"
     >
       <div id="field" className="flex flex-col items-center gap-2">
         <section
           ref={fieldRef}
           id="grass"
-          className="bg-green-500 min-w-[320px] min-[375px]:min-w-[370px] min-[425px]:min-w-[400px] h-[545px] p-3
+          className="bg-green-500 md:min-w-[425px] w-full max-w-[425px] h-[545px] md:h-[580px] p-3
          rounded-md relative flex-shrink-0 self-center"
         >
           {" "}
@@ -79,7 +79,10 @@ function App() {
           <Field />
         </section>
 
-        <div className="flex items-center  gap-2">
+        <div
+          id="selectors"
+          className="flex items-center justify-between w-full max-w-[425px]"
+        >
           <Clubs
             club={club}
             setClub={setClub}

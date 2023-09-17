@@ -28,11 +28,13 @@ export default function Share({
   const [dataURL, setDataURL] = useState<IDataURL>();
 
   return (
-    <>
+    <div>
       {ready ? (
+        // Aqui tem que ser Label por causa do library
+
         <label
           htmlFor="share"
-          className="btn btn-success bg-green-600 text-slate-800 gap-2"
+          className="max-[320px]:btn-sm btn btn-success bg-green-600 text-slate-800 gap-2"
           onClick={async () => {
             setLetUserSelect({ index: undefined, letSelect: false });
             if (!fieldRef.current) return;
@@ -43,10 +45,11 @@ export default function Share({
             setDataURL({ png: png, blob: blob });
           }}
         >
-          <MdDoneAll size={20} className=" rounded-full" />
+          <MdDoneAll size={20} className="rounded-full" />
         </label>
       ) : (
-        <button disabled className="btn bg-slate-800 gap-2">
+        // Aqui tem que ser button pelo atributo 'disabled'
+        <button disabled className="btn max-[425px]:btn-sm  bg-slate-800 gap-2">
           <MdDone size={20} className="text-slate-500 rounded-full" />
         </button>
       )}
@@ -78,7 +81,7 @@ export default function Share({
           <Socials link={link} club={club} />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

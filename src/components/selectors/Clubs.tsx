@@ -7,16 +7,16 @@ interface Props {
 
 function Clubs({ setClub, club, resetSquares }: Props) {
   return (
-    <div className="form-control w-full max-w-xs">
-      <span className="flex items-center gap-3">
+    <div className="form-control">
+      <span className="flex items-center gap-2">
         {club && (
-          <label className="text-sm " htmlFor="clubs">
-            <img src={clubs[club]} alt={club} width="30" />
+          <label className="text-sm max-[425px]:hidden" htmlFor="clubs">
+            <img src={clubs[club]} alt={club} width="26" />
           </label>
         )}
         <select
           id="clubs"
-          className="select min-w-max bg-slate-800"
+          className="max-[320px]:select-sm select bg-slate-800"
           name="clubs"
           onChange={(e) => {
             resetSquares();
