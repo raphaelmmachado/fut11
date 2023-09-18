@@ -1,4 +1,4 @@
-import { IPlayer } from "../../../types/typing";
+import { IPlayer } from "../types/typing";
 
 const showPlayers = (
   position: string,

@@ -1,4 +1,4 @@
-import { IPlayer } from "../../../types/typing";
+import { IPlayer } from "../types/typing";
 //ignoring accents and special characters
 const filter = (array: IPlayer[], search: string): IPlayer[] => {
   const filtered = array.filter(

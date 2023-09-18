@@ -15,7 +15,9 @@ export default function TipsModal() {
         <div className="modal-box">
           <ul className="text-sm">
             <h3 className="font-bold text-lg text-slate-300">Dicas</h3>
-            <li className="list-disc">Clique duplo remove jogador</li>
+            <li className="list-disc">
+              Clique duplo remove jogador (se estiver usando mouse)
+            </li>
             <li className="list-disc">
               {"Clicar em 'C' dá a faixa de capitão"}
             </li>

@@ -1,5 +1,5 @@
 import { IPlayer, IPlayerSelect } from "../../../types/typing";
-import { formatPosition } from "./formatPositions";
+import { formatPosition } from "../../../utils/formatPositions";
 interface Props {
   players: IPlayer[];
   player: IPlayer;
@@ -41,10 +41,10 @@ export default function Player({
       />
       <div className="flex flex-col-reverse flex-1">
         {" "}
-        <h3 className="font-bold  text-slate-200">{player.name}</h3>
+        <h3 className="font-bold text-xl text-slate-200">{player.name}</h3>
         <span className="flex justify-between text-sm">
           <h4 className="flex-shrink text-xs">
-            <span className=" font-medium text-slate-500">{player.num}</span>{" "}
+            <span className="font-medium text-slate-500">{player.num}</span>{" "}
             {player.pos && (
               <span className="italic text-slate-400">
                 {formatPosition(player.pos)}
