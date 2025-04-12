@@ -10,7 +10,6 @@ Build your formation.
 
 * Click on camera icon to copy screenshot of the field to clipboard.
 * Click on save to download the image to your disc.
-* Click on Generate Link to get shortened link.
 
 ## Screenshot:
 
