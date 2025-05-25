@@ -1,4 +1,5 @@
 import { Squad, Clubs } from "../types/typing";
+import { getPhotoUrl, getGenericPhoto } from "../utils/getPlayerPhoto";
 
 const clubs: Clubs = {
   flamengo:
@@ -11,236 +12,256 @@ const clubs: Clubs = {
     "https://logodetimes.com/times/corinthians/logo-corinthians-256.png",
   atletico_mineiro:
     "https://atletico.com.br/wp-content/uploads/2022/01/atletico.svg",
-  brazil: "../../assets/icons/cbf_small.png",
+  brazil: ".././assets/icons/cbf_small.png",
 };
 
 const squads: Squad = {
   flamengo: [
+    //GOLEIROS
     {
-      name: "Santos",
+      name: "Agustin Rossi",
+      short_name: "Rossi",
       num: 1,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/santos_bkb964.png",
+      img: getPhotoUrl("flamengo", "rossi"),
       pos: "G",
+      country: "AR", // Argentina
     },
     {
-      name: "Matheuzinho",
-      short_name: "Matheuzinho",
-      apelido: "Matheus França Silva",
-      num: 34,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823393/flamengo_new/matheuzinho_ghhn3k.png",
-      pos: "LD",
+      name: "Matheus Cunha",
+      short_name: "M. Cunha",
+      num: 25,
+      img: getPhotoUrl("flamengo", "mcunha"),
+      pos: "G",
+      country: "BR", // Brasil
     },
     {
-      name: "Guilhermo Varela",
-      short_name: "Varela",
-      num: 2,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/varela_jiubq2.png",
-      pos: "LD",
+      name: "Dyogo Alves",
+      short_name: "D. Alves",
+      pos: "G",
+      num: 49,
+      img: getPhotoUrl("flamengo", "dyogoalves"),
+      country: "BR", // Brasil
     },
     {
-      name: "Rodrigo Caio",
-      short_name: "R. Caio",
-      num: 3,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/caio_m8akvq.png",
-      pos: "D",
+      name: "Leonardo Nannetti",
+      short_name: "L. Nannetti",
+      pos: "G",
+      num: 58,
+      img: getGenericPhoto(),
+      country: "BR", // Brasil
     },
-    {
-      name: "David Luiz",
-      short_name: "D. Luiz",
-      num: 23,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823393/flamengo_new/davidluiz_tlgtmt.png",
-      pos: "D",
-    },
+
     {
       name: "Léo Pereira",
       short_name: "L. Pereira",
       apelido: "trepa",
       num: 4,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823393/flamengo_new/leopereira_sjcb2e.png",
+      img: getPhotoUrl("flamengo", "leopereira"),
       pos: "D",
+      country: "BR", // Brasil
     },
-
+    {
+      name: "Léo Ortiz",
+      short_name: "L. Ortiz",
+      pos: "D",
+      num: 3,
+      img: getPhotoUrl("flamengo", "leo-ortiz"),
+      country: "BR", // Brasil
+    },
+    {
+      name: "Cleiton",
+      num: 33,
+      img: getPhotoUrl("flamengo", "cleiton"),
+      pos: "D",
+      country: "BR", // Brasil
+    },
+    {
+      name: "Danilo",
+      pos: "D",
+      num: 13,
+      img: getPhotoUrl("flamengo", "danilo"),
+      country: "BR", // Brasil
+    },
+    {
+      name: "Alex Sandro",
+      short_name: "A. Sandro",
+      pos: "LE",
+      num: 26,
+      img: getPhotoUrl("flamengo", "alexsandro"),
+      country: "BR", // Brasil (Assumi brasileiro por ser comum, se for o Alex Sandro lateral esquerdo da Juventus, seria BR)
+    },
+    {
+      name: "Matías Viña",
+      short_name: "Viña",
+      pos: "LE",
+      num: 17,
+      img: getPhotoUrl("flamengo", "vina"),
+      country: "UY", // Uruguai
+    },
+    {
+      name: "Guilhermo Varela",
+      short_name: "Varela",
+      num: 2,
+      img: getPhotoUrl("flamengo", "varela"),
+      pos: "LD",
+      country: "UY", // Uruguai
+    },
+    {
+      name: "Wesley França",
+      short_name: "Wesley",
+      num: 43,
+      img: getPhotoUrl("flamengo", "wesley"),
+      pos: "LD",
+      country: "BR", // Brasil
+    },
     {
       name: "Ayrton Lucas",
-      short_name: "A. Lucas",
+      short_name: "Ayrton",
       apelido: "beijinho",
       num: 6,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/ayrtonlucas_n0rezw.png",
+      img: getPhotoUrl("flamengo", "ayrtonlucas"),
       pos: "LE",
+      country: "BR", // Brasil
     },
     {
-      name: "Filipe Luis",
-      short_name: "F. Luis",
-      num: 16,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/filipeluis_sho8i7.png",
-      pos: "LE",
+      name: "Erick Pulgar",
+      short_name: "Erick",
+      num: 5,
+      img: getPhotoUrl("flamengo", "pulgar"),
+      pos: "MD",
+      country: "CL", // Chile
     },
     {
       name: "Gerson",
       apelido: "Coringa vapo",
-      num: 20,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/gerson_bw16r0.png",
-      pos: "MC",
-    },
-    {
-      name: "Thiago Maia",
-      short_name: "T. Maia",
       num: 8,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/tmaia_kvduft.png",
-      pos: "MD",
+      img: getPhotoUrl("flamengo", "gerson"),
+      pos: "MC",
+      country: "BR", // Brasil
     },
-    // {
-    //   name: "A. Vidal",
-    //   short_name: "Vidal",
-    //   apelido: "Arturo Vidal",
-    //   num: 32,
-    //   img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/vidal_luvygz.png",
-    //   pos: "MD",
-    // },
     {
-      name: "Éverton Ribeiro",
-      short_name: "É. Ribeiro",
-      apelido: "miteiro",
-      num: 7,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/evertonribeiro_nt9dab.png",
-      pos: "MA",
+      name: "Allan",
+      pos: "MD",
+      num: 21,
+      img: getPhotoUrl("flamengo", "allan"),
+      country: "BR", // Brasil
     },
-    // {
-    //   name: "Matheus Gonçalves",
-    //   short_name: "M. Gonçalves",
-    //   num: 40,
-    //   img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680741410/flamengo_new/mgoncalves_z4ektt.png",
-    //   pos: "MA",
-    // },
+    {
+      name: "Evertton Araújo",
+      short_name: "E. Araújo",
+      pos: "MC",
+      num: 52,
+      img: getPhotoUrl("flamengo", "everttonaraujo"),
+      country: "BR", // Brasil
+    },
+    {
+      name: "Nicolás de la Cruz",
+      short_name: "De la Cruz",
+      apelido: "DLC",
+      pos: "MC",
+      num: 18,
+      img: getPhotoUrl("flamengo", "dlc"),
+      country: "UY", // Uruguai
+    },
+    {
+      name: "Caio Garcia",
+      short_name: "C. Garcia",
+      pos: "MC",
+      num: 55,
+      img: getGenericPhoto(),
+      country: "BR", // Brasil
+    },
+    {
+      name: "Matheus Gonçalves",
+      short_name: "M. Gonçalves",
+      num: 20,
+      img: getPhotoUrl("flamengo", "mgoncalves"),
+      pos: "MA",
+      country: "BR", // Brasil
+    },
     {
       name: "De Arrascaeta",
       short_name: "Arrascaeta",
       apelido: "Giorgian de Arrascaeta",
-      num: 14,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/arrasca_ikfu3f.png",
+      num: 10,
+      img: getPhotoUrl("flamengo", "arrasca"),
       pos: "MA",
+      country: "UY", // Uruguai
+    },
+
+    {
+      name: "Cebolinha",
+      short_name: "Cebolinha",
+      apelido: "Éverton Cebola",
+      num: 19,
+      img: getPhotoUrl("flamengo", "cebolinha"),
+      pos: "PE",
+      country: "BR", // Brasil
+    },
+
+    {
+      name: "Luiz Araujo",
+      short_name: "L. Araújo",
+      num: 22,
+      img: getPhotoUrl("flamengo", "luiz_araujo"),
+      pos: "PD",
+      country: "BR", // Brasil
+    },
+
+    {
+      name: "Gonzalo Plata",
+      short_name: "Plata",
+      pos: "PD",
+      num: 50,
+      img: getPhotoUrl("flamengo", "plata"),
+      country: "EC", // Equador
     },
     {
-      name: "Gabriel",
-      short_name: "Gabigol",
-      apelido: "Gabriel Gabigol Barbosa",
-      num: 10,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/gabigol_kn7fm0.png",
-      pos: "A",
+      name: "Michael",
+      pos: "PE",
+      num: 30,
+      img: getPhotoUrl("flamengo", "michael"),
+      country: "BR", // Brasil
     },
     {
       name: "Pedro",
       apelido: "Pedro queixada Guilherme",
       num: 9,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/pedro_crxzjx.png",
+      img: getPhotoUrl("flamengo", "pedro"),
       pos: "A",
+      country: "BR", // Brasil
     },
     {
       name: "Bruno Henrique",
       short_name: "B. Henrique",
       apelido: "Speed Wonder",
       num: 27,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/brunohenrique_z6mpb0.png",
+      img: getPhotoUrl("flamengo", "brunohenrique"),
       pos: "A",
+      country: "BR", // Brasil
     },
     {
-      name: "Cebolinha",
-      short_name: "Cebolinha",
-      apelido: "Éverton Cebola",
+      name: "Juninho",
+      apelido: "Xereca",
+      pos: "A",
+      num: 23,
+      img: getPhotoUrl("flamengo", "juninho"),
+      country: "BR", // Brasil
+    },
+    {
+      name: "Wallace Yan",
+      short_name: "W. Yan",
+      pos: "A",
+      num: 64,
+      img: getPhotoUrl("flamengo", "WallaceYan"),
+      country: "BR", // Brasil
+    },
+    {
+      name: "Lorran",
       num: 19,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/cebolinha_pgp8xk.png",
-      pos: "PE",
-    },
-
-    {
-      name: "Fabricio Bruno",
-      short_name: "F. Bruno",
-      num: 15,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823393/flamengo_new/fabriciobruno_k0gzkk.png",
-      pos: "D",
-    },
-    {
-      name: "Pablo",
-      apelido: "Pablo do Nascimento Castro",
-      num: 30,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823393/flamengo_new/pablo_qcwtdw.png",
-      pos: "D",
-    },
-    // {
-    //   name: "Matheus França",
-    //   short_name: "M. França",
-    //   apelido: "Matheus França de Oliveira",
-    //   num: 42,
-    //   img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/mfranca_yby8sm.png",
-    //   pos: "MA",
-    // },
-    {
-      name: "Vitor Hugo",
-      short_name: "V. Hugo",
-      num: 29,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/vitorhugo_m7ye2x.png",
       pos: "MA",
-    },
-    {
-      name: "Erick Pulgar",
-      short_name: "E. Pulgar",
-      num: 5,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823394/flamengo_new/pulgar_rdnsaw.png",
-      pos: "MD",
-    },
-    {
-      name: "Matheus Cunha",
-      short_name: "M. Cunha",
-      num: 51,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823395/flamengo_new/mcunha_hhltdm.png",
-      pos: "G",
-    },
-    {
-      name: "Cleiton",
-      num: 33,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680823393/flamengo_new/cleiton_eopb7g.png",
-      pos: "D",
-    },
-    // {
-    //   name: "Mateus Lima",
-    //   short_name: "Mateusão",
-    //   num: 46,
-    //   img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1680741412/flamengo_new/mateusao_r0o6gz.png",
-    //   pos: "A",
-    // },
-    {
-      name: "Wesley França",
-      short_name: "Wesley",
-      num: 43,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1683045034/flamengo/wesley_is9trh.png",
-      pos: "LD",
-    },
-    {
-      name: "Igor Jesus",
-      short_name: "Igor",
-      num: 48,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1683062182/flamengo/igor-jesus-1_xgkzri.png",
-      pos: "MD",
-    },
-    {
-      name: "Agustin Rossi",
-      short_name: "Rossi",
-      num: 17,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1686705910/flamengo/agustin_rossi_1_nejgkz.png",
-      pos: "G",
-    },
-    {
-      name: "Luiz Araujo",
-      short_name: "L. Araújo",
-      num: 22,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1686703571/flamengo/luiz_araujo_jzn8oy.png",
-      pos: "PD",
-    },
-    {
-      name: "Allan",
-      pos: "MD",
-      num: 21,
-      img: "https://res.cloudinary.com/raphaelmmachado/image/upload/v1688274928/flamengo/ALLAN_o6zxnk.png",
+      img: getPhotoUrl("flamengo", "lorran"),
+      country: "BR", // Brasil
     },
   ],
   palmeiras: [

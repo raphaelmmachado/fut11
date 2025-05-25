@@ -1,12 +1,5 @@
 import "./index.css";
-import {
-  useState,
-  useRef,
-  lazy,
-  Suspense,
-  useEffect,
-  ClassAttributes,
-} from "react";
+import { useState, useRef, lazy, Suspense, useEffect } from "react";
 //components
 import { Field } from "./components/field/Field";
 import Squares from "./components/field/Squares";
@@ -30,7 +23,6 @@ import PlayerGrid from "./components/selectors/player_select/grid/PlayerGrid";
 
 const TipsModal = lazy(() => import("./components/buttons/TipsModal"));
 const Share = lazy(() => import("./components/buttons/share/Share"));
-
 const playersInitialValue: IPlayer[] = Array(11).fill({
   name: null,
   short_name: null,
@@ -39,6 +31,7 @@ const playersInitialValue: IPlayer[] = Array(11).fill({
   pos: null,
   apelido: null,
   captan: null,
+  country: null,
 });
 
 const letUserSelectInitialValue = {
@@ -93,8 +86,8 @@ function App() {
       className="min-h-screen flex flex-col md:flex-row gap-6
         w-screen sm:w-full bg-slate-900 relative text-slate-300 sm:p-3"
     >
-      <div id="field" className="flex flex-col items-center gap-2">
-        <section
+      <section id="frame" className="flex flex-col items-center gap-2">
+        <div
           ref={fieldRef}
           id="grass"
           className="bg-green-500  md:min-w-[425px] w-full max-w-[425px] h-[545px] md:h-[580px] p-3
@@ -111,10 +104,10 @@ function App() {
             showNumbers={showNumbers}
           />
           <Field />
-        </section>
+        </div>
 
         <div
-          id="selectors"
+          id="buttons"
           className="flex items-center justify-between w-full max-w-[425px] p-2"
         >
           <Clubs
@@ -139,8 +132,8 @@ function App() {
             />
           </Suspense>
         </div>
-      </div>
-      <div className="flex flex-col w-full">
+      </section>
+      <section id="player-picker" className="flex flex-col w-full">
         <PlayerGrid
           label="Jogadores Recomendados"
           recommendedGrid={true}
@@ -172,7 +165,7 @@ function App() {
           restOfPlayers={playersToShow}
           fieldRef={fieldRef}
         />
-      </div>
+      </section>
     </main>
   );
 }
