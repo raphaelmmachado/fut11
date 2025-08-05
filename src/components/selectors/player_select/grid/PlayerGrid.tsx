@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiHide, BiShow } from "react-icons/bi";
 import { BiGridHorizontal } from "react-icons/bi";
 import { IPlayer, IPlayerSelect, Squad } from "../../../../types/typing";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
-import Player from "../Players";
+import Player from "../Player";
 
 interface Props {
   gridRef?: React.RefObject<HTMLDivElement>;
+
   recommendedGrid: boolean;
   recommendedPlayers?: IPlayer[] | undefined;
   restOfPlayers?: IPlayer[] | undefined;

@@ -1,5 +1,6 @@
 import { IPlayer, IPlayerSelect } from "../../../types/typing";
 import { formatPosition } from "../../../utils/formatPositions";
+import { getGenericPhoto } from "../../../utils/getPlayerPhoto";
 interface Props {
   players: IPlayer[];
   player: IPlayer;
@@ -35,9 +36,10 @@ export default function Player({
         hover:bg-slate-600 transition-colors`}
     >
       <img
-        src={player.img}
+        src={player.img || getGenericPhoto()}
+        onError={() => getGenericPhoto()}
         alt={player.name}
-        className="shrink-0 object-contain rounded-md"
+        className="max-w-[50px] max-h-[70px]"
       />
       <div className="flex flex-col-reverse flex-1">
         {" "}

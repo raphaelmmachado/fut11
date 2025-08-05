@@ -11,15 +11,15 @@ interface Squad {
   [key: string]: IPlayer[];
 }
 interface IPlayer {
-  name: string | undefined;
+  name?: string;
   short_name?: string;
-  num: number | undefined;
-  img: string | undefined;
-  pos: Positions | undefined;
+  num?: number;
+  img?: string;
+  pos?: Positions;
   apelido?: string;
   captan?: boolean;
+  country?: string;
 }
-s;
 type IPlayerSelect = {
   letSelect: boolean;
   index: undefined | number;
@@ -77,3 +77,10 @@ export interface Result {
 interface Clubs {
   [key: string]: string;
 }
+
+// Para o evento de mudança genérico (inputs de texto e select)
+export interface ChangeEvent
+  extends React.ChangeEvent<HTMLInputElement | HTMLSelectElement> {}
+
+// Para o evento de mudança do input de arquivo
+export interface FileChangeEvent extends React.ChangeEvent<HTMLInputElement> {}

@@ -15,7 +15,7 @@ const clubs: Clubs = {
   brazil: ".././assets/icons/cbf_small.png",
 };
 
-const squads: Squad = {
+let squads: Squad = {
   flamengo: [
     //GOLEIROS
     {
@@ -262,6 +262,14 @@ const squads: Squad = {
       pos: "MA",
       img: getPhotoUrl("flamengo", "lorran"),
       country: "BR", // Brasil
+    },
+    {
+      name: "Jorginho",
+      short_name: "Jorginho",
+      pos: "MC",
+      img: getPhotoUrl("flamengo", "jorginho"),
+      country: "BR", // Brasil
+      num: 99,
     },
   ],
   palmeiras: [

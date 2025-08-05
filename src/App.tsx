@@ -20,6 +20,7 @@ import FilterPosition from "./components/selectors/FilterPosition";
 import SearchPlayer from "./components/selectors/SearchPlayer";
 import SwitchNum from "./components/buttons/SwitchNum";
 import PlayerGrid from "./components/selectors/player_select/grid/PlayerGrid";
+import PlayerCreation from "./components/selectors/player_creation/PlayerCreation";
 
 const TipsModal = lazy(() => import("./components/buttons/TipsModal"));
 const Share = lazy(() => import("./components/buttons/share/Share"));
@@ -49,28 +50,28 @@ function App() {
   const [search, setSearch] = useState<string>("");
   const [filterPosition, setFilterPosition] = useState<string>("all");
   const [showNumbers, setShowNumbers] = useState(false);
-  const defaultSet = squads[club];
-  const [playersToShow, setPlayersToShow] = useState<IPlayer[]>(defaultSet);
+  const [playersToShow, setPlayersToShow] = useState<IPlayer[]>(squads[club]);
   const [recommended, setRecommended] = useState<IPlayer[]>();
   const fieldRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (search) return;
-    showPlayers(filterPosition, squads[club], defaultSet, setPlayersToShow);
+    showPlayers(filterPosition, squads[club], playersToShow, setPlayersToShow);
   }, [filterPosition, club]);
+
   const filteredByName = filter(squads[club], search);
 
   useEffect(() => {
-    recommendPlayers(squads[club], letUserSelect.index, setRecommended);
-  }, [letUserSelect, club]);
+    recommendPlayers(playersToShow, letUserSelect.index, setRecommended);
+  }, [letUserSelect, club, playersToShow]);
 
   useEffect(() => {
     if (search) {
       setPlayersToShow(filteredByName);
       setFilterPosition("all");
     } else {
-      setPlayersToShow(defaultSet);
+      setPlayersToShow(playersToShow);
     }
   }, [search]);
 
@@ -165,6 +166,7 @@ function App() {
           restOfPlayers={playersToShow}
           fieldRef={fieldRef}
         />
+        <PlayerCreation setPlayersState={setPlayersToShow} />
       </section>
     </main>
   );

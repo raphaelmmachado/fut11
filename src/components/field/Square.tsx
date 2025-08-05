@@ -65,15 +65,22 @@ export default function Square({
     >
       {player.img && player.name && typeof player.num === "number" ? (
         <div
+          // style={{
+          //   backgroundImage: `url(https://flagsapi.com/${player.country}/shiny/64.png)`,
+          // }}
           className="flex flex-col items-center
-        justify-center relative min-w-max p-1"
+        justify-center relative min-w-max p-1 bg-center bg-no-repeat"
         >
           {/* new button */}
-          <img src={player.img} alt={player.name} className="shadow-none" />
-          <div className="flex">
+          <img
+            src={player.img}
+            alt={player.name}
+            className="shadow-none max-w-[60px]"
+          />
+          <div className="flex items-center relative">
             <h3
               className="text-slate-700 font-bold text-center
-           bg-green-200 rounded-md px-1 shadow-md z-10"
+           bg-green-200 rounded-md px-1 shadow-md z-10 "
             >
               {player.short_name ?? player.name}
             </h3>{" "}
